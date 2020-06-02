@@ -2,7 +2,7 @@
 
 In this repository we try to combine all **HMS Cordova Kits** in one Project!
 
-Cordova HMS packages integrated in this project:
+Cordova HMS packages integrated in this project :
 
 1.  **HMS / GMS Availability Checker.**
 
