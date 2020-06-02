@@ -54,5 +54,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "com.huawei.cordovahmspushplugin": {
+    "source": {
+      "type": "local",
+      "path": "D:\\workspace\\cordova\\allhms\\node_modules\\cordovahmspushplugin"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

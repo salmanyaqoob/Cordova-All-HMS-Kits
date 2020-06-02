@@ -33,6 +33,7 @@ var app = {
   hmsAvailable: false,
   gmsAvailable: false,
   locationLog: "",
+  pushLog: "",
   // Application Constructor
   initialize: function () {
     if (this.initialized) return;
@@ -67,6 +68,10 @@ var app = {
     // app.RequestLocation;
     // app.RemoveLocation;
     // app.Getlastlocation;
+
+    // Push
+    // app.GetToken();
+    this.SetMessageCallback();
 
     // Method 1: Active invoking
     // document.getElementById("hms-gms-check").onclick = app.isHmsAvailable;
@@ -194,6 +199,64 @@ var app = {
     }
   },
 
+  SetMessageCallback: function () {
+    console.log("SetMessageCallback");
+    try {
+      cordova.plugins.CordovaHMSPushPlugin.getMessageCallback(
+        "index.js",
+        (_res) => {
+          app.pushLog = "Message Callback \n" + _res + "\n";
+          document.getElementById("pushlog").innerHTML = app.pushLog;
+        },
+        (_err) => {
+          app.pushLog = "message Fail";
+          document.getElementById("pushlog").innerHTML = app.pushLog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  GetToken: function () {
+    console.log("GetToken");
+    try {
+      cordova.plugins.CordovaHMSPushPlugin.getToken(
+        "index.js",
+        (_res) => {
+          app.pushLog = "Get Token Success. \n Push Token : " + _res + "\n";
+          document.getElementById("pushlog").innerHTML = app.pushLog;
+        },
+        (_err) => {
+          app.pushLog = "Get Token Fail: " + _err;
+          document.getElementById("pushlog").innerHTML = app.pushLog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  TopicSubscribe: function (topic) {
+    console.log("TopicSubscribe");
+    try {
+      cordova.plugins.CordovaHMSPushPlugin.subscribeTopic(
+        topic,
+        (_res) => {
+          app.pushLog = _res + "\n";
+          document.getElementById("pushlog").innerHTML = app.pushLog;
+        },
+        (_err) => {
+          app.pushLog = "Topic subcription Fail: " + _err;
+          document.getElementById("pushlog").innerHTML = app.pushLog;
+        }
+      );
+    } catch (_e) {
+      alert("error");
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
   //   EnterPms: function () {
   //     console.log("CheckIap");
   //     try {
@@ -291,40 +354,6 @@ var app = {
   //         },
   //         (_err) => {
   //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   SetMessageCallback: function () {
-  //     console.log("SetMessageCallback");
-  //     try {
-  //       cordova.plugins.CordovaHMSPushPlugin.getMessageCallback(
-  //         "index.js",
-  //         (_res) => {
-  //           alert("message:" + _res);
-  //         },
-  //         (_err) => {
-  //           alert("message Fail");
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   GetToken: function () {
-  //     console.log("GetToken");
-  //     try {
-  //       cordova.plugins.CordovaHMSPushPlugin.getToken(
-  //         "index.js",
-  //         (_res) => {
-  //           alert("Get Token Success, Push Token : " + _res);
-  //         },
-  //         (_err) => {
-  //           alert("Get Token Fail: " + _err);
   //         }
   //       );
   //     } catch (_e) {

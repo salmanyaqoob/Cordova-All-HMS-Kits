@@ -47,6 +47,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.plugins.CordovaHMSLocationPlugin"
       ]
+    },
+    {
+      "id": "com.huawei.cordovahmspushplugin.CordovaHMSPushPlugin",
+      "file": "plugins/com.huawei.cordovahmspushplugin/www/CordovaHMSPushPlugin.js",
+      "pluginId": "com.huawei.cordovahmspushplugin",
+      "clobbers": [
+        "cordova.plugins.CordovaHMSPushPlugin"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -56,6 +64,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-x-toast": "2.7.2",
     "cordova-plugin-dialogs": "2.0.2",
-    "com.huawei.cordovahmslocationplugin": "1.0.0"
+    "com.huawei.cordovahmslocationplugin": "1.0.0",
+    "com.huawei.cordovahmspushplugin": "1.0.0"
   };
 });

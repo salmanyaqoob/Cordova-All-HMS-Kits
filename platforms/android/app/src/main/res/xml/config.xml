@@ -19,6 +19,9 @@
     <feature name="CordovaHMSLocationPlugin">
         <param name="android-package" value="com.huawei.cordovahmslocationplugin.CordovaHMSLocationPlugin" />
     </feature>
+    <feature name="CordovaHMSPushPlugin">
+        <param name="android-package" value="com.huawei.cordovahmspushplugin.CordovaHMSPushPlugin" />
+    </feature>
     <name>Cordova All HMS</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

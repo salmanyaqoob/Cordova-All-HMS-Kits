@@ -41,7 +41,7 @@
     />
     <meta name="color-scheme" content="light dark" />
     <!-- <link rel="stylesheet" href="css/index.css"> -->
-    <title>HMS Location Kit</title>
+    <title>HMS Push Kit</title>
 
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" />
@@ -81,7 +81,7 @@
           class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-left"
           data-rel="back"
         ></a>
-        <h1>HMS Location Kit</h1>
+        <h1>HMS Push Kit</h1>
         <a
           href="index.html"
           class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-right"
@@ -96,7 +96,7 @@
         <!-- HEADER START -->
         <div class="headerSection">
           <div class="headerTitleWrapper">
-            <div class="headerTitle">HMS Location Kit</div>
+            <div class="headerTitle">HMS Push Kit</div>
           </div>
           <div class="headerLogoWrapper">
             <img src="img/hms-rn-logo.png" class="headerLogo" />
@@ -105,30 +105,26 @@
         <!-- HEADER END -->
 
         <div>
-          <button
-            id="requestlocation"
-            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-          >
-            Request Location
+          <button id="getToken" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            Get Token
           </button>
+        </div>
+
+        <div>
           <button
-            id="stoplocation"
+            id="topicSubcribe"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
           >
-            Remove Location
-          </button>
-          <button
-            id="getlastlocation"
-            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-          >
-            Last Location
+            Topic subscribe (all)
           </button>
         </div>
 
         <div class="ui-body ui-body-a ui-corner-all">
-          <h3>Location Logs</h3>
-          <div id="locationlog"></div>
+          <h3>Push Logs</h3>
+          <div id="pushlog"></div>
         </div>
+
+        <!-- <div class="toastmsg" style="display: none;"></div> -->
       </div>
       <!-- MAIN CONTENT END -->
 
@@ -137,22 +133,16 @@
           .off("pageshow", "#page-page-location")
           .on("pageshow", "#page-page-location", function () {});
 
-        $("#requestlocation")
+        $("#getToken")
           .off()
           .on("click", function (e) {
-            app.RequestLocation();
+            app.GetToken();
           });
 
-        $("#stoplocation")
+        $("#topicSubcribe")
           .off()
           .on("click", function (e) {
-            app.RemoveLocation();
-          });
-
-        $("#getlastlocation")
-          .off()
-          .on("click", function (e) {
-            app.Getlastlocation();
+            app.TopicSubscribe("all");
           });
       </script>
     </div>

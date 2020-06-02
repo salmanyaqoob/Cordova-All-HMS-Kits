@@ -47,6 +47,14 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.CordovaHMSLocationPlugin"
         ]
+    },
+    {
+        "file": "plugins/com.huawei.cordovahmspushplugin/www/CordovaHMSPushPlugin.js",
+        "id": "com.huawei.cordovahmspushplugin.CordovaHMSPushPlugin",
+        "pluginId": "com.huawei.cordovahmspushplugin",
+        "clobbers": [
+            "cordova.plugins.CordovaHMSPushPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -57,7 +65,8 @@ module.exports.metadata =
     "com.huawei.cordovahmsaccountplugin": "1.0.0",
     "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
     "cordova-plugin-dialogs": "2.0.2",
-    "com.huawei.cordovahmslocationplugin": "1.0.0"
+    "com.huawei.cordovahmslocationplugin": "1.0.0",
+    "com.huawei.cordovahmspushplugin": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

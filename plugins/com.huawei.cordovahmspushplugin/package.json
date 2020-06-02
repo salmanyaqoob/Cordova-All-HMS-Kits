@@ -1,0 +1,21 @@
+{
+  "name": "cordovahmspushplugin",
+  "version": "1.0.0",
+  "description": "For Hms Push",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "test",
+  "license": "ISC",
+  "cordova": {
+    "id": "com.huawei.cordovahmspushplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ]
+}

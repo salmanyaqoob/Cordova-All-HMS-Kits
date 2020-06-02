@@ -23,7 +23,8 @@
       "com.huawei.cordovahmsaccountplugin": {},
       "com.huawei.cordovahmsgmscheckplugin": {},
       "cordova-plugin-dialogs": {},
-      "com.huawei.cordovahmslocationplugin": {}
+      "com.huawei.cordovahmslocationplugin": {},
+      "com.huawei.cordovahmspushplugin": {}
     },
     "platforms": [
       "android"
@@ -37,6 +38,7 @@
     "cordova-browser": "^6.0.0",
     "cordova-plugin-browsersync-gen2": "^1.1.7",
     "cordova-plugin-dialogs": "^2.0.2",
-    "cordova-plugin-x-toast": "^2.7.2"
+    "cordova-plugin-x-toast": "^2.7.2",
+    "cordovahmspushplugin": "file:CordovaHMSPlugin/cordovaHmsPushPlugin"
   }
 }
