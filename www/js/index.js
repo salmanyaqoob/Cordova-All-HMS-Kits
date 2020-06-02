@@ -59,7 +59,8 @@ var app = {
     this.isHmsAvailable();
 
     // Comming Soon
-    document.getElementById("scan-kit").onclick = app.makeDialog;
+    document.getElementById("iapOpen").onclick = app.makeDialog;
+    document.getElementById("scanKitOpen").onclick = app.makeDialog;
 
     // Map
     document.getElementById("openMapView").onclick = function () {

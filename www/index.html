@@ -131,13 +131,16 @@
             Huawei Account
           </a>
 
-          <a
-            href="#"
+          <button id="iapOpen" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            HMS In App Purchase
+          </button>
+
+          <button
+            id="scanKitOpen"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-            id="scan-kit"
           >
             HMS Scan Kit
-          </a>
+          </button>
         </div>
 
         <div class="toastmsg" style="display: none;"></div>
@@ -145,11 +148,12 @@
       <!-- MAIN CONTENT END -->
 
       <script>
-        // $("#openMapView")
-        //   .off()
-        //   .on("click", function (e) {
-        //     // click_api.openMap();
-        //   });
+        $("#iapOpen")
+          .off()
+          .on("click", function (e) {
+            alert("iap");
+            // click_api.openMap();
+          });
       </script>
     </div>
   </body>
