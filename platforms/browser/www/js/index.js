@@ -34,6 +34,8 @@ var app = {
   gmsAvailable: false,
   locationLog: "",
   pushLog: "",
+  accountlog: "",
+  analyticslog: "",
   // Application Constructor
   initialize: function () {
     if (this.initialized) return;
@@ -73,17 +75,15 @@ var app = {
     // app.GetToken();
     this.SetMessageCallback();
 
-    // Method 1: Active invoking
-    // document.getElementById("hms-gms-check").onclick = app.isHmsAvailable;
-    // this.GetToken();
-    // this.SetMessageCallback();
+    // Account
+    // app.SignInByIdToken;
+    // app.SignInByAuthCode;
+    // app.SignOut;
+    // app.RevokeAuth;
 
-    // document.getElementById("signInByIdToken").onclick = app.SignInByIdToken;
-    // document.getElementById("signInByAuthCode").onclick = app.SignInByAuthCode;
-    // document.getElementById("signOut").onclick = app.SignOut;
-    // document.getElementById("revokeAuth").onclick = app.RevokeAuth;
+    // HiAnalytics
+    // app.LogEvent;
 
-    // document.getElementById("logEvent").onclick = app.LogEvent;
     // document.getElementById("enterPms").onclick = app.EnterPms;
   },
 
@@ -148,14 +148,17 @@ var app = {
   RequestLocation: function () {
     console.log("RequestLocation");
     try {
+      app.locationLog =
+        app.locationLog + this.appendP("Location update", "heading");
       cordova.plugins.CordovaHMSLocationPlugin.requestLocation(
         "index.js",
         (_res) => {
-          app.locationLog = app.locationLog + _res + "\n";
+          app.locationLog = app.locationLog + this.appendP(_res, "normal");
           document.getElementById("locationlog").innerHTML = app.locationLog;
         },
         (_err) => {
-          alert(_err);
+          app.locationLog = app.locationLog + this.appendP(_err, "error");
+          document.getElementById("locationlog").innerHTML = app.locationLog;
         }
       );
     } catch (_e) {
@@ -166,14 +169,17 @@ var app = {
   Getlastlocation: function () {
     console.log("Getlastlocation");
     try {
+      app.locationLog =
+        app.locationLog + this.appendP("Last Location", "heading");
       cordova.plugins.CordovaHMSLocationPlugin.getLastlocation(
         "index.js",
         (_res) => {
-          app.locationLog = "Last Location:" + _res + "\n";
+          app.locationLog = app.locationLog + this.appendP(_res, "normal");
           document.getElementById("locationlog").innerHTML = app.locationLog;
         },
         (_err) => {
-          alert("get Fail:" + _err);
+          app.locationLog = app.locationLog + this.appendP(_err, "error");
+          document.getElementById("locationlog").innerHTML = app.locationLog;
         }
       );
     } catch (_e) {
@@ -187,11 +193,15 @@ var app = {
       cordova.plugins.CordovaHMSLocationPlugin.removeLocation(
         "index.js",
         (_res) => {
-          app.locationLog = "Location Remove" + _res + "\n";
+          app.locationLog =
+            app.locationLog +
+            this.appendP("Location remove: " + _res, "normal");
           document.getElementById("locationlog").innerHTML = app.locationLog;
         },
         (_err) => {
-          alert("remove Fail" + _err);
+          app.locationLog =
+            app.locationLog + this.appendP("Remove Fali" + _err, "error");
+          document.getElementById("locationlog").innerHTML = app.locationLog;
         }
       );
     } catch (_e) {
@@ -205,11 +215,15 @@ var app = {
       cordova.plugins.CordovaHMSPushPlugin.getMessageCallback(
         "index.js",
         (_res) => {
-          app.pushLog = "Message Callback \n" + _res + "\n";
+          app.pushLog =
+            app.pushLog + this.appendP("Data Message Callback", "heading");
+
+          app.pushLog = app.pushLog + this.appendP(_res, "heading");
+
           document.getElementById("pushlog").innerHTML = app.pushLog;
         },
         (_err) => {
-          app.pushLog = "message Fail";
+          app.pushLog = app.pushLog + this.appendP(_err, "error");
           document.getElementById("pushlog").innerHTML = app.pushLog;
         }
       );
@@ -224,11 +238,17 @@ var app = {
       cordova.plugins.CordovaHMSPushPlugin.getToken(
         "index.js",
         (_res) => {
-          app.pushLog = "Get Token Success. \n Push Token : " + _res + "\n";
+          app.pushLog =
+            app.pushLog + this.appendP("Get Token Successfully", "success");
+
+          app.pushLog =
+            app.pushLog + this.appendP("Push Token : " + _res, "normal");
+
           document.getElementById("pushlog").innerHTML = app.pushLog;
         },
         (_err) => {
-          app.pushLog = "Get Token Fail: " + _err;
+          app.pushLog =
+            app.pushLog + this.appendP("Get Token Fail: " + _err, "error");
           document.getElementById("pushlog").innerHTML = app.pushLog;
         }
       );
@@ -239,17 +259,22 @@ var app = {
 
   TopicSubscribe: function (topic) {
     console.log("TopicSubscribe");
-    alert(topic);
     try {
       cordova.plugins.CordovaHMSPushPlugin.subscribeTopic(
         topic,
         (_res) => {
-          alert(_res);
-          app.pushLog = _res + "\n";
+          app.pushLog =
+            app.pushLog +
+            this.appendP("Topic subcription Successfully", "success");
+
+          app.pushLog = app.pushLog + this.appendP(_res, "normal");
+
           document.getElementById("pushlog").innerHTML = app.pushLog;
         },
         (_err) => {
-          app.pushLog = "Topic subcription Fail: " + _err;
+          app.pushLog =
+            app.pushLog +
+            this.appendP("Topic subcription Fail:" + _err, "error");
           document.getElementById("pushlog").innerHTML = app.pushLog;
         }
       );
@@ -257,6 +282,116 @@ var app = {
       alert("error");
       alert(JSON.stringify(_e, "\n", 4));
     }
+  },
+
+  SignInByIdToken: function () {
+    console.log("SignInByIdToken");
+    try {
+      cordova.plugins.CordovaHMSAccountPlugin.signInWithIdToken(
+        "index.js",
+        (_res) => {
+          app.accountlog =
+            app.accountlog + this.appendP("Sign Successfully", "success");
+          app.accountlog = app.accountlog + this.appendP(_res, "normal");
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        },
+        (_err) => {
+          app.accountlog = app.accountlog + this.appendP(_err, "error");
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  SignInByAuthCode: function () {
+    console.log("SignInByAuthCode");
+    try {
+      cordova.plugins.CordovaHMSAccountPlugin.signInWithAuthCode(
+        "index.js",
+        (_res) => {
+          app.accountlog =
+            app.accountlog + this.appendP("Sign Successfully", "success");
+          app.accountlog = app.accountlog + this.appendP(_res, "normal");
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        },
+        (_err) => {
+          app.accountlog = app.accountlog + this.appendP(_err, "error") + "\n";
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  SignOut: function () {
+    console.log("SignOut");
+    try {
+      cordova.plugins.CordovaHMSAccountPlugin.signOut(
+        "index.js",
+        (_res) => {
+          app.accountlog =
+            app.accountlog + this.appendP("Signout Successfully", "success");
+          app.accountlog = app.accountlog + this.appendP(_res, "normal");
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        },
+        (_err) => {
+          app.accountlog = app.accountlog + this.appendP(_err, "error");
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  RevokeAuth: function () {
+    console.log("RevokeAuth");
+    try {
+      cordova.plugins.CordovaHMSAccountPlugin.revokeAuth(
+        "index.js",
+        (_res) => {
+          app.accountlog = app.accountlog + this.appendP(_res, "success");
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        },
+        (_err) => {
+          app.accountlog = app.accountlog + this.appendP(_err, "error");
+          document.getElementById("accountlog").innerHTML = app.accountlog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  LogEvent: function () {
+    console.log("LogEvent Analytics");
+    try {
+      var message = { uProp: "testAccount", time: "2020", page: "Analytics" };
+      cordova.plugins.HMSAnalyticsPlugin.logEvent(
+        message,
+        (_res) => {
+          alert("LogEvent");
+          app.analyticslog =
+            app.analyticslog +
+            this.appendP("Event log Successfully", "success");
+          app.analyticslog = app.analyticslog + this.appendP(_res, "normal");
+          document.getElementById("analyticslog").innerHTML = app.analyticslog;
+        },
+        (_err) => {
+          app.analyticslog = app.analyticslog + this.appendP(_err, "error");
+          document.getElementById("analyticslog").innerHTML = app.analyticslog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  appendP: function (text, pClass) {
+    return "<p class='" + pClass + "'>" + text + "</p>";
   },
 
   //   EnterPms: function () {
@@ -267,92 +402,6 @@ var app = {
   //         (_res) => {
   //           console.log(_res);
   //           click_api.openPMS();
-  //         },
-  //         (_err) => {
-  //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   LogEvent: function () {
-  //     console.log("LogEvent");
-  //     try {
-  //       var message = { uProp: "testAccount", time: "2020", page: "index.html" };
-  //       cordova.plugins.HMSAnalyticsPlugin.logEvent(
-  //         message,
-  //         (_res) => {
-  //           alert(_res);
-  //         },
-  //         (_err) => {
-  //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   SignInByIdToken: function () {
-  //     console.log("SignInByIdToken");
-  //     try {
-  //       cordova.plugins.CordovaHMSAccountPlugin.signInWithIdToken(
-  //         "index.js",
-  //         (_res) => {
-  //           alert(_res);
-  //         },
-  //         (_err) => {
-  //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   SignInByAuthCode: function () {
-  //     console.log("SignInByAuthCode");
-  //     try {
-  //       cordova.plugins.CordovaHMSAccountPlugin.signInWithAuthCode(
-  //         "index.js",
-  //         (_res) => {
-  //           alert(_res);
-  //         },
-  //         (_err) => {
-  //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   SignOut: function () {
-  //     console.log("SignOut");
-  //     try {
-  //       cordova.plugins.CordovaHMSAccountPlugin.signOut(
-  //         "index.js",
-  //         (_res) => {
-  //           alert(_res);
-  //         },
-  //         (_err) => {
-  //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   RevokeAuth: function () {
-  //     console.log("RevokeAuth");
-  //     try {
-  //       cordova.plugins.CordovaHMSAccountPlugin.revokeAuth(
-  //         "index.js",
-  //         (_res) => {
-  //           alert(_res);
   //         },
   //         (_err) => {
   //           alert(_err);

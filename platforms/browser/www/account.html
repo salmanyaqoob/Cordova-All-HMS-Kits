@@ -41,7 +41,7 @@
     />
     <meta name="color-scheme" content="light dark" />
     <!-- <link rel="stylesheet" href="css/index.css"> -->
-    <title>HMS Push Kit</title>
+    <title>HMS Account Kit</title>
 
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" />
@@ -73,7 +73,7 @@
     <script src="js/index.js"></script>
   </head>
   <body>
-    <div data-role="page" id="page-push">
+    <div data-role="page" id="page-account">
       <!-- MENU START -->
       <div data-role="header" data-position="fixed" data-tap-toggle="false">
         <a
@@ -81,7 +81,7 @@
           class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-left"
           data-rel="back"
         ></a>
-        <h1>HMS Push Kit</h1>
+        <h1>HMS Account Kit</h1>
         <a
           href="index.html"
           class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-right"
@@ -96,7 +96,7 @@
         <!-- HEADER START -->
         <div class="headerSection">
           <div class="headerTitleWrapper">
-            <div class="headerTitle">HMS Push Kit</div>
+            <div class="headerTitle">HMS Account Kit</div>
           </div>
           <div class="headerLogoWrapper">
             <img src="img/hms-rn-logo.png" class="headerLogo" />
@@ -105,42 +105,66 @@
         <!-- HEADER END -->
 
         <div>
-          <button id="getToken" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-            Get Token
+          <button
+            id="signInByIdToken"
+            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
+          >
+            SignIn by IdToken
           </button>
 
           <button
-            id="topicSubcribe"
+            id="signInByAuthCode"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
           >
-            Topic subscribe (all)
+            signIn by AuthCode
+          </button>
+
+          <button id="signOut" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            signOut
+          </button>
+
+          <button
+            id="revokeAuth"
+            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
+          >
+            revokeAuth
           </button>
         </div>
 
         <div class="ui-body ui-body-a ui-corner-all">
-          <h3>Push Logs</h3>
-          <div id="pushlog"></div>
+          <h3>Account Logs</h3>
+          <div id="accountlog"></div>
         </div>
-
-        <!-- <div class="toastmsg" style="display: none;"></div> -->
       </div>
       <!-- MAIN CONTENT END -->
 
       <script>
         $(document)
-          .off("pageshow", "#page-push")
-          .on("pageshow", "#page-push", function () {});
+          .off("pageshow", "#page-account")
+          .on("pageshow", "#page-account", function () {});
 
-        $("#getToken")
+        $("#signInByIdToken")
           .off()
           .on("click", function (e) {
-            app.GetToken();
+            app.SignInByIdToken();
           });
 
-        $("#topicSubcribe")
+        $("#signInByAuthCode")
           .off()
           .on("click", function (e) {
-            app.TopicSubscribe("all");
+            app.SignInByAuthCode();
+          });
+
+        $("#signOut")
+          .off()
+          .on("click", function (e) {
+            app.SignOut();
+          });
+
+        $("#revokeAuth")
+          .off()
+          .on("click", function (e) {
+            app.RevokeAuth();
           });
       </script>
     </div>

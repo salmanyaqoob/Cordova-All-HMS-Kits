@@ -35,6 +35,7 @@ var app = {
   locationLog: "",
   pushLog: "",
   accountlog: "",
+  analyticslog: "",
   // Application Constructor
   initialize: function () {
     if (this.initialized) return;
@@ -80,12 +81,9 @@ var app = {
     // app.SignOut;
     // app.RevokeAuth;
 
-    // Method 1: Active invoking
-    // document.getElementById("hms-gms-check").onclick = app.isHmsAvailable;
-    // this.GetToken();
-    // this.SetMessageCallback();
+    // HiAnalytics
+    // app.LogEvent;
 
-    // document.getElementById("logEvent").onclick = app.LogEvent;
     // document.getElementById("enterPms").onclick = app.EnterPms;
   },
 
@@ -368,6 +366,30 @@ var app = {
     }
   },
 
+  LogEvent: function () {
+    console.log("LogEvent Analytics");
+    try {
+      var message = { uProp: "testAccount", time: "2020", page: "Analytics" };
+      cordova.plugins.HMSAnalyticsPlugin.logEvent(
+        message,
+        (_res) => {
+          alert("LogEvent");
+          app.analyticslog =
+            app.analyticslog +
+            this.appendP("Event log Successfully", "success");
+          app.analyticslog = app.analyticslog + this.appendP(_res, "normal");
+          document.getElementById("analyticslog").innerHTML = app.analyticslog;
+        },
+        (_err) => {
+          app.analyticslog = app.analyticslog + this.appendP(_err, "error");
+          document.getElementById("analyticslog").innerHTML = app.analyticslog;
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
   appendP: function (text, pClass) {
     return "<p class='" + pClass + "'>" + text + "</p>";
   },
@@ -380,24 +402,6 @@ var app = {
   //         (_res) => {
   //           console.log(_res);
   //           click_api.openPMS();
-  //         },
-  //         (_err) => {
-  //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   LogEvent: function () {
-  //     console.log("LogEvent");
-  //     try {
-  //       var message = { uProp: "testAccount", time: "2020", page: "index.html" };
-  //       cordova.plugins.HMSAnalyticsPlugin.logEvent(
-  //         message,
-  //         (_res) => {
-  //           alert(_res);
   //         },
   //         (_err) => {
   //           alert(_err);

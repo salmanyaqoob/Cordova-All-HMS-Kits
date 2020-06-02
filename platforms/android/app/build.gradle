@@ -99,9 +99,10 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "../com.huawei.cordovahmsaccountplugin/hms-build.gradle"
-apply from: "../com.huawei.cordovahmsgmscheckplugin/hms-build.gradle"
 apply from: "../com.huawei.cordovahmslocationplugin/hms-build.gradle"
 apply from: "../com.huawei.cordovahmspushplugin/hms-build.gradle"
+apply from: "../com.huawei.cordovahmsgmscheckplugin/hms-build.gradle"
+apply from: "../com.huawei.analyticsplugin/hms-build.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -298,10 +299,11 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     implementation "com.huawei.hms:hwid:4.0.0.300"
-    implementation "com.google.android.gms:play-services-base:17.2.1"
-    implementation "com.huawei.hms:location:4.0.0.300"
     implementation "com.huawei.hms:maps:4.0.0.301"
     implementation "com.huawei.hms:push:4.0.0.300"
+    implementation "com.huawei.hms:location:4.0.0.300"
+    implementation "com.google.android.gms:play-services-base:17.2.1"
+    implementation "com.huawei.hms:hianalytics:4.0.0.300"
     // SUB-PROJECT DEPENDENCIES END
 }
 

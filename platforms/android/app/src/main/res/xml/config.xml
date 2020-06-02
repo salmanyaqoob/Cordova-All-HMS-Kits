@@ -3,9 +3,6 @@
     <feature name="CordovaHMSAccountPlugin">
         <param name="android-package" value="com.huawei.cordovahmsaccountplugin.CordovaHMSAccountPlugin" />
     </feature>
-    <feature name="CordovaHMSGMSCheckPlugin">
-        <param name="android-package" value="com.huawei.cordovahmsgmscheckplugin.CordovaHMSGMSCheckPlugin" />
-    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
@@ -21,6 +18,13 @@
     </feature>
     <feature name="CordovaHMSPushPlugin">
         <param name="android-package" value="com.huawei.cordovahmspushplugin.CordovaHMSPushPlugin" />
+    </feature>
+    <feature name="CordovaHMSGMSCheckPlugin">
+        <param name="android-package" value="com.huawei.cordovahmsgmscheckplugin.CordovaHMSGMSCheckPlugin" />
+    </feature>
+    <feature name="HMSAnalyticsPlugin">
+        <param name="android-package" value="com.huawei.analyticsplugin.HMSAnalyticsPlugin" />
+        <param name="onload" value="true" />
     </feature>
     <name>Cordova All HMS</name>
     <description>

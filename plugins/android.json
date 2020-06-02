@@ -10,9 +10,6 @@
     "com.huawei.cordovahmsaccountplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
-    "com.huawei.cordovahmsgmscheckplugin": {
-      "PACKAGE_NAME": "com.salman.cordova.all.hms"
-    },
     "cordova-plugin-browsersync-gen2": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
@@ -29,6 +26,12 @@
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
     "com.huawei.cordovahmspushplugin": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "com.huawei.cordovahmsgmscheckplugin": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "com.huawei.analyticsplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },

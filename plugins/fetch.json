@@ -31,14 +31,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "com.huawei.cordovahmsgmscheckplugin": {
-    "source": {
-      "type": "local",
-      "path": "D:\\workspace\\cordova\\allhms\\node_modules\\com.huawei.cordovahmsgmscheckplugin"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-dialogs": {
     "source": {
       "type": "registry",
@@ -59,6 +51,22 @@
     "source": {
       "type": "local",
       "path": "D:\\workspace\\cordova\\allhms\\node_modules\\cordovahmspushplugin"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.huawei.cordovahmsgmscheckplugin": {
+    "source": {
+      "type": "local",
+      "path": "D:\\workspace\\cordova\\allhms\\node_modules\\com.huawei.cordovahmsgmscheckplugin"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.huawei.analyticsplugin": {
+    "source": {
+      "type": "local",
+      "path": "D:\\workspace\\cordova\\allhms\\node_modules\\com.huawei.analyticsplugin"
     },
     "is_top_level": true,
     "variables": {}

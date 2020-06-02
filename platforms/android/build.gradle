@@ -27,8 +27,6 @@ buildscript {
         maven { url 'http://developer.huawei.com/repo/' }
         maven { url 'http://developer.huawei.com/repo/' }
         maven { url 'http://developer.huawei.com/repo/' }
-        maven { url 'http://developer.huawei.com/repo/' }
-        maven { url 'http://developer.huawei.com/repo/' }
     }
 
     dependencies {
@@ -44,11 +42,6 @@ buildscript {
         classpath 'com.huawei.agconnect:agcp:1.2.0.300'
 
         classpath 'com.huawei.agconnect:agcp:1.2.0.300'
-
-        classpath 'com.huawei.agconnect:agcp:1.2.0.300'
-
-        classpath 'com.huawei.agconnect:agcp:1.2.0.300'
-
         classpath 'com.huawei.agconnect:agcp:1.2.0.300'
     }
 }
@@ -57,8 +50,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'http://developer.huawei.com/repo/' }
-        maven { url 'http://developer.huawei.com/repo/' }
         maven { url 'http://developer.huawei.com/repo/' }
         maven { url 'http://developer.huawei.com/repo/' }
         maven { url 'http://developer.huawei.com/repo/' }

@@ -41,7 +41,7 @@
     />
     <meta name="color-scheme" content="light dark" />
     <!-- <link rel="stylesheet" href="css/index.css"> -->
-    <title>HMS Push Kit</title>
+    <title>HMS Analytics Kit</title>
 
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" />
@@ -73,7 +73,7 @@
     <script src="js/index.js"></script>
   </head>
   <body>
-    <div data-role="page" id="page-push">
+    <div data-role="page" id="page-analytics">
       <!-- MENU START -->
       <div data-role="header" data-position="fixed" data-tap-toggle="false">
         <a
@@ -81,7 +81,7 @@
           class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-left"
           data-rel="back"
         ></a>
-        <h1>HMS Push Kit</h1>
+        <h1>HMS Analytics Kit</h1>
         <a
           href="index.html"
           class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-right"
@@ -96,7 +96,7 @@
         <!-- HEADER START -->
         <div class="headerSection">
           <div class="headerTitleWrapper">
-            <div class="headerTitle">HMS Push Kit</div>
+            <div class="headerTitle">HMS Analytics Kit</div>
           </div>
           <div class="headerLogoWrapper">
             <img src="img/hms-rn-logo.png" class="headerLogo" />
@@ -105,42 +105,27 @@
         <!-- HEADER END -->
 
         <div>
-          <button id="getToken" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-            Get Token
-          </button>
-
-          <button
-            id="topicSubcribe"
-            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-          >
-            Topic subscribe (all)
+          <button id="logEvent" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            Log Event
           </button>
         </div>
 
         <div class="ui-body ui-body-a ui-corner-all">
-          <h3>Push Logs</h3>
-          <div id="pushlog"></div>
+          <h3>Analytics Logs</h3>
+          <div id="analyticslog"></div>
         </div>
-
-        <!-- <div class="toastmsg" style="display: none;"></div> -->
       </div>
       <!-- MAIN CONTENT END -->
 
       <script>
         $(document)
-          .off("pageshow", "#page-push")
-          .on("pageshow", "#page-push", function () {});
+          .off("pageshow", "#page-page-analytics")
+          .on("pageshow", "#page-page-analytics", function () {});
 
-        $("#getToken")
+        $("#logEvent")
           .off()
           .on("click", function (e) {
-            app.GetToken();
-          });
-
-        $("#topicSubcribe")
-          .off()
-          .on("click", function (e) {
-            app.TopicSubscribe("all");
+            app.LogEvent();
           });
       </script>
     </div>

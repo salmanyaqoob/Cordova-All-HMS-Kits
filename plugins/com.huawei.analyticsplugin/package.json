@@ -1,0 +1,17 @@
+{
+  "name": "com.huawei.analyticsplugin",
+  "version": "1.0.0",
+  "description": "Analytics Kit",
+  "cordova": {
+    "id": "com.huawei.analyticsplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}

@@ -142,8 +142,12 @@
             setTimeout(() => {
               var gms = app.gmsAvailable ? "Available" : "Not Available";
               var hms = app.hmsAvailable ? "Available" : "Not Available";
-              $("#gms-available").html(gms);
-              $("#hms-available").html(hms);
+
+              var gmsClass = app.gmsAvailable ? "success" : "error";
+              var hmsClass = app.hmsAvailable ? "success" : "error";
+
+              $("#gms-available").html(app.appendP(gms, gmsClass));
+              $("#hms-available").html(app.appendP(hms, hmsClass));
             }, 100);
           });
       </script>

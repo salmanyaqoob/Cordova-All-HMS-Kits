@@ -21,16 +21,18 @@
       "cordova-plugin-x-toast": {},
       "cordova-plugin-browsersync-gen2": {},
       "com.huawei.cordovahmsaccountplugin": {},
-      "com.huawei.cordovahmsgmscheckplugin": {},
       "cordova-plugin-dialogs": {},
       "com.huawei.cordovahmslocationplugin": {},
-      "com.huawei.cordovahmspushplugin": {}
+      "com.huawei.cordovahmspushplugin": {},
+      "com.huawei.cordovahmsgmscheckplugin": {},
+      "com.huawei.analyticsplugin": {}
     },
     "platforms": [
       "android"
     ]
   },
   "dependencies": {
+    "com.huawei.analyticsplugin": "file:CordovaHMSPlugin/HMSAnalyticsPlugin",
     "com.huawei.cordovahmsaccountplugin": "file:CordovaHMSPlugin/CordovaHMSAccountPlugin",
     "com.huawei.cordovahmsgmscheckplugin": "file:CordovaHMSPlugin/CordovaHMSGMSCheckPlugin",
     "com.huawei.cordovahmslocationplugin": "file:CordovaHMSPlugin/CordovaHMSLocationPlugin",
@@ -39,6 +41,6 @@
     "cordova-plugin-browsersync-gen2": "^1.1.7",
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-x-toast": "^2.7.2",
-    "cordovahmspushplugin": "file:CordovaHMSPlugin/cordovaHmsPushPlugin"
+    "cordovahmspushplugin": "file:CordovaHMSPlugin/CordovaHMSPushPlugin"
   }
 }
