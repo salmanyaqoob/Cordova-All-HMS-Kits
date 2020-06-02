@@ -73,7 +73,7 @@
     <script src="js/index.js"></script>
   </head>
   <body>
-    <div data-role="page" id="page-location">
+    <div data-role="page" id="page-push">
       <!-- MENU START -->
       <div data-role="header" data-position="fixed" data-tap-toggle="false">
         <a
@@ -108,9 +108,7 @@
           <button id="getToken" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
             Get Token
           </button>
-        </div>
 
-        <div>
           <button
             id="topicSubcribe"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
@@ -130,8 +128,8 @@
 
       <script>
         $(document)
-          .off("pageshow", "#page-page-location")
-          .on("pageshow", "#page-page-location", function () {});
+          .off("pageshow", "#page-push")
+          .on("pageshow", "#page-push", function () {});
 
         $("#getToken")
           .off()

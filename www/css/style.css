@@ -359,7 +359,52 @@ div.ui-content.ui-map {
     margin-right: 2px;
   }
 }
+.heading {
+  color: #000000;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 0.3em;
+  width: 100%;
+  float: none;
+}
+.normal {
+  color: #000000;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 0.3em;
+  width: 100%;
+  float: none;
+}
+.success {
+  color: #47af69;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 0.3em;
+  width: 100%;
+  float: none;
+}
+.error {
+  color: #bb0000;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 0.3em;
+  width: 100%;
+  float: none;
+}
 /* Validation */
+label.success {
+  color: #47af69;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin-top: 0.5em;
+  width: 100%;
+  float: none;
+}
 label.error {
   color: #bb0000;
   font-size: 16px;
