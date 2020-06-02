@@ -19,8 +19,16 @@
 
 package com.salman.cordova.all.hms;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.webkit.JavascriptInterface;
 import org.apache.cordova.*;
+import org.apache.cordova.CordovaActivity;
+import org.apache.cordova.engine.SystemWebView;
+
+import com.salman.cordova.all.hms.map.MapActivity;
 
 public class MainActivity extends CordovaActivity
 {
@@ -37,5 +45,21 @@ public class MainActivity extends CordovaActivity
 
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+    }
+
+    private final class JSInterface {
+        @SuppressLint("JavascriptInterface")
+        @JavascriptInterface
+        public void openMap() {
+            Intent intent = new Intent(MainActivity.this, MapActivity.class);
+            startActivity(intent);
+        }
+
+        // @SuppressLint("JavascriptInterface")
+        // @JavascriptInterface
+        // public void openPMS() {
+        //     Intent intent = new Intent(MainActivity.this, PMSActivity.class);
+        //     startActivity(intent);
+        // }
     }
 }

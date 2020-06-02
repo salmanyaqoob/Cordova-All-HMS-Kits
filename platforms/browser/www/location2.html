@@ -41,7 +41,7 @@
     />
     <meta name="color-scheme" content="light dark" />
     <!-- <link rel="stylesheet" href="css/index.css"> -->
-    <title>Hello World</title>
+    <title>HMS Location Kit</title>
 
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" />
@@ -73,10 +73,21 @@
     <script src="js/index.js"></script>
   </head>
   <body>
-    <div data-role="page" id="page-home">
+    <div data-role="page" id="page-location">
       <!-- MENU START -->
       <div data-role="header" data-position="fixed" data-tap-toggle="false">
-        <h1>Cordova HMS Kits</h1>
+        <a
+          href="#"
+          class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-left"
+          data-rel="back"
+        ></a>
+        <h1>HMS Location Kit</h1>
+        <a
+          href="index.html"
+          class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-right"
+        >
+          Home
+        </a>
       </div>
       <!-- MENU END -->
 
@@ -85,7 +96,7 @@
         <!-- HEADER START -->
         <div class="headerSection">
           <div class="headerTitleWrapper">
-            <div class="headerTitle">Cordova HMS Kits</div>
+            <div class="headerTitle">HMS Location Kit</div>
           </div>
           <div class="headerLogoWrapper">
             <img src="img/hms-rn-logo.png" class="headerLogo" />
@@ -94,60 +105,45 @@
         <!-- HEADER END -->
 
         <div>
-          <a
-            href="hms-gms-check.html"
+          <button
+            id="requestlocation"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
           >
-            HMS / GMS Check
-          </a>
-          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-            HMS Location
-          </a>
-          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-            Huawei Map
-          </a>
-
-          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-            HMS Push
-          </a>
-
-          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-            Huawei Analytics
-          </a>
-
-          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-            Huawei Account
-          </a>
-
-          <a
-            href="#"
+            request location
+          </button>
+          <button
+            id="stoplocation"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-            onclick="commingSoon()"
           >
-            HMS Scan Kit
-          </a>
+            remove location
+          </button>
+          <button
+            id="getlastlocation"
+            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
+          >
+            last location
+          </button>
         </div>
 
-        <div class="toastmsg" style="display: none;"></div>
+        <!-- <div class="toastmsg" style="display: none;"></div> -->
       </div>
       <!-- MAIN CONTENT END -->
 
       <script>
-        function commingSoon() {
-          alert("sas");
-          // window.plugins.toast.show("Comming soon", "short", "bottom");
-        }
         $(document)
-          .off("pagecreate", "#page-home")
-          .on("pagecreate", "#page-home", function () {
-            // app.initialize();
+          .off("pageshow", "#page-page-location")
+          .on("pageshow", "#page-page-location", function () {});
 
-            // window.plugins.toast.show(msg, "short", "bottom");
-            app.makeDialog();
+        $("#requestlocation")
+          .off()
+          .on("click", function (e) {
+            alert("s");
+            app.RequestLocation();
           });
-        // document.getElementById("hms_scan").onclick = function () {
-        //   window.plugins.toast.show("Comming soon", "short", "bottom");
-        // };
+
+        // if (app.initialized) {
+        //   app.RequestLocation;
+        // }
       </script>
     </div>
   </body>

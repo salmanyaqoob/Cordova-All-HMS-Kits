@@ -50,13 +50,23 @@ var app = {
   onDeviceReady: function () {
     this.receivedEvent("deviceready");
 
+    // HMS & GMS Check
+    this.isGmsAvailable();
+    this.isHmsAvailable();
+
+    // Comming Soon
+    document.getElementById("scan-kit").onclick = app.makeDialog;
+
+    // Location
+    // document.getElementById("requestlocation").onclick = app.RequestLocation;
+    // document.getElementById("stoplocation").onclick = app.RemoveLocation;
+    // document.getElementById("getlastlocation").onclick = app.Getlastlocation;
+
     // Method 1: Active invoking
     // document.getElementById("hms-gms-check").onclick = app.isHmsAvailable;
     // this.GetToken();
     // this.SetMessageCallback();
-    // document.getElementById("requestlocation").onclick = app.RequestLocation;
-    // document.getElementById("stoplocation").onclick = app.RemoveLocation;
-    // document.getElementById("getlastlocation").onclick = app.Getlastlocation;
+
     // document.getElementById("signInByIdToken").onclick = app.SignInByIdToken;
     // document.getElementById("signInByAuthCode").onclick = app.SignInByAuthCode;
     // document.getElementById("signOut").onclick = app.SignOut;
@@ -71,15 +81,24 @@ var app = {
 
   // Update DOM on a Received Event
   receivedEvent: function (id) {
-    this.isGmsAvailable();
-    app.isHmsAvailable();
-
     // var parentElement = document.getElementById(id);
     // var listeningElement = parentElement.querySelector(".listening");
     // var receivedElement = parentElement.querySelector(".received");
     // listeningElement.setAttribute("style", "display:none;");
     // receivedElement.setAttribute("style", "display:block;");
     // console.log("Received Event: " + id);
+  },
+
+  makeDialog: function () {
+    function alertDismissed() {
+      // do something
+    }
+    navigator.notification.alert(
+      "This feature is comming soon.", // message
+      alertDismissed, // callback
+      "Comming Soon", // title
+      "Done" // buttonName
+    );
   },
 
   // Check HMS Available
@@ -111,6 +130,57 @@ var app = {
         },
         (_err) => {
           alert(_err);
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  RequestLocation: function () {
+    console.log("RequestLocation");
+    try {
+      cordova.plugins.CordovaHMSLocationPlugin.requestLocation(
+        "index.js",
+        (_res) => {
+          alert(_res);
+        },
+        (_err) => {
+          alert(_err);
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  Getlastlocation: function () {
+    console.log("Getlastlocation");
+    try {
+      cordova.plugins.CordovaHMSLocationPlugin.getLastlocation(
+        "index.js",
+        (_res) => {
+          alert("location:" + _res);
+        },
+        (_err) => {
+          alert("get Fail:" + _err);
+        }
+      );
+    } catch (_e) {
+      alert(JSON.stringify(_e, "\n", 4));
+    }
+  },
+
+  RemoveLocation: function () {
+    console.log("RemoveLocation");
+    try {
+      cordova.plugins.CordovaHMSLocationPlugin.removeLocation(
+        "index.js",
+        (_res) => {
+          alert("message:" + _res);
+        },
+        (_err) => {
+          alert("remove Fail" + _err);
         }
       );
     } catch (_e) {
@@ -215,57 +285,6 @@ var app = {
   //         },
   //         (_err) => {
   //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   RequestLocation: function () {
-  //     console.log("RequestLocation");
-  //     try {
-  //       cordova.plugins.CordovaHMSLocationPlugin.requestLocation(
-  //         "index.js",
-  //         (_res) => {
-  //           alert(_res);
-  //         },
-  //         (_err) => {
-  //           alert(_err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   Getlastlocation: function () {
-  //     console.log("Getlastlocation");
-  //     try {
-  //       cordova.plugins.CordovaHMSLocationPlugin.getLastlocation(
-  //         "index.js",
-  //         (_res) => {
-  //           alert("location:" + _res);
-  //         },
-  //         (_err) => {
-  //           alert("get Fail:" + _err);
-  //         }
-  //       );
-  //     } catch (_e) {
-  //       alert(JSON.stringify(_e, "\n", 4));
-  //     }
-  //   },
-
-  //   RemoveLocation: function () {
-  //     console.log("RemoveLocation");
-  //     try {
-  //       cordova.plugins.CordovaHMSLocationPlugin.removeLocation(
-  //         "index.js",
-  //         (_res) => {
-  //           alert("message:" + _res);
-  //         },
-  //         (_err) => {
-  //           alert("remove Fail" + _err);
   //         }
   //       );
   //     } catch (_e) {

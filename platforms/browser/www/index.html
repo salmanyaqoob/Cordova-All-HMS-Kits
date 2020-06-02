@@ -33,7 +33,6 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
     />
-    <!-- <meta content="script-src 'self' 'unsafe-inline';" /> -->
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta
@@ -94,56 +93,47 @@
         </div>
         <!-- HEADER END -->
 
-        <a
-          href="hms-gms-check.html"
-          class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-        >
-          HMS / GMS Check
-        </a>
-        <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-          HMS Location
-        </a>
-        <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-          Huawei Map
-        </a>
+        <div>
+          <a
+            href="hms-gms-check.html"
+            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
+          >
+            HMS / GMS Check
+          </a>
+          <a
+            href="location2.html"
+            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
+          >
+            HMS Location
+          </a>
+          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            Huawei Map
+          </a>
 
-        <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-          HMS Push
-        </a>
+          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            HMS Push
+          </a>
 
-        <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-          Huawei Analytics
-        </a>
+          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            Huawei Analytics
+          </a>
 
-        <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
-          Huawei Account
-        </a>
+          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+            Huawei Account
+          </a>
 
-        <a
-          href="#"
-          class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-          onclick="commingSoon()"
-        >
-          HMS Scan Kit
-        </a>
+          <a
+            href="#"
+            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
+            id="scan-kit"
+          >
+            HMS Scan Kit
+          </a>
+        </div>
+
+        <div class="toastmsg" style="display: none;"></div>
       </div>
-      <div class="toastmsg" id="toastmsg" style="display: none;"></div>
+      <!-- MAIN CONTENT END -->
     </div>
-    <!-- MAIN CONTENT END -->
-
-    <script>
-      function commingSoon() {
-        window.plugins.toast.show("Comming soon", "short", "bottom");
-      }
-      // $(document)
-      //   .off("pagecreate", "#page-home")
-      //   .on("pagecreate", "#page-home", function () {
-      //     // app.initialize();
-      //     window.plugins.toast.show(msg, "short", "bottom");
-      //   });
-      // document.getElementById("hms_scan").onclick = function () {
-      //   window.plugins.toast.show("Comming soon", "short", "bottom");
-      // };
-    </script>
   </body>
 </html>

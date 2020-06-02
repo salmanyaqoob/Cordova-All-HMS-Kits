@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="com.huawei.cordovahmslocationplugin"
+    version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>CordovaHMSLocationPlugin</name>
+    <js-module name="CordovaHMSLocationPlugin" src="www/CordovaHMSLocationPlugin.js">
+        <clobbers target="cordova.plugins.CordovaHMSLocationPlugin" />
+    </js-module>
+    <platform name="android">
+        <!-- hook for add maven repositories and agc plugin-->
+        <hook src="scripts/android/after_plugin_install.js" type="after_plugin_install" />
+        <hook src="scripts/android/before_plugin_uninstall.js" type="before_plugin_uninstall" />
+
+        <framework custom="true" src="src/android/build.gradle" type="gradleReference" />
+        <!-- Location Kit dependency-->
+        <framework src="com.huawei.hms:location:4.0.0.300" />
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="CordovaHMSLocationPlugin">
+                <param name="android-package"
+                    value="com.huawei.cordovahmslocationplugin.CordovaHMSLocationPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/CordovaHMSLocationPlugin.java"
+            target-dir="src/com/huawei/cordovahmslocationplugin" />
+    </platform>
+    <!-- Script help to copy agconnect-services.json to right places-->
+    <hook src="scripts/after_prepare.js" type="after_prepare" />
+</plugin>

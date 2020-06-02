@@ -1,0 +1,16 @@
+{
+  "android": {
+    "release": {
+      "keystore": "./android.jks",
+      "storePassword": "android",
+      "alias": "android",
+      "password": "android"
+    },
+    "debug": {
+      "keystore": "./android.jks",
+      "storePassword": "android",
+      "alias": "android",
+      "password": "android"
+    }
+  }
+}

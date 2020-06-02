@@ -21,6 +21,9 @@
     },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "com.huawei.cordovahmslocationplugin": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },
   "dependent_plugins": {},
@@ -64,6 +67,14 @@
       "merges": [
         "navigator.notification"
       ]
+    },
+    {
+      "file": "plugins/com.huawei.cordovahmslocationplugin/www/CordovaHMSLocationPlugin.js",
+      "id": "com.huawei.cordovahmslocationplugin.CordovaHMSLocationPlugin",
+      "pluginId": "com.huawei.cordovahmslocationplugin",
+      "clobbers": [
+        "cordova.plugins.CordovaHMSLocationPlugin"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -71,6 +82,7 @@
     "cordova-plugin-browsersync-gen2": "1.1.7",
     "com.huawei.cordovahmsaccountplugin": "1.0.0",
     "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
-    "cordova-plugin-dialogs": "2.0.2"
+    "cordova-plugin-dialogs": "2.0.2",
+    "com.huawei.cordovahmslocationplugin": "1.0.0"
   }
 }

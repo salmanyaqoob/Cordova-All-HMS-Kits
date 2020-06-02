@@ -46,5 +46,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "com.huawei.cordovahmslocationplugin": {
+    "source": {
+      "type": "local",
+      "path": "D:\\workspace\\cordova\\allhms\\node_modules\\com.huawei.cordovahmslocationplugin"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

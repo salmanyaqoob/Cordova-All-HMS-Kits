@@ -21,6 +21,9 @@
     },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "com.huawei.cordovahmslocationplugin": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },
   "dependent_plugins": {}

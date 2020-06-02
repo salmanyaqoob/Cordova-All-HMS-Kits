@@ -22,7 +22,8 @@
       "cordova-plugin-browsersync-gen2": {},
       "com.huawei.cordovahmsaccountplugin": {},
       "com.huawei.cordovahmsgmscheckplugin": {},
-      "cordova-plugin-dialogs": {}
+      "cordova-plugin-dialogs": {},
+      "com.huawei.cordovahmslocationplugin": {}
     },
     "platforms": [
       "android"
@@ -31,6 +32,7 @@
   "dependencies": {
     "com.huawei.cordovahmsaccountplugin": "file:CordovaHMSPlugin/CordovaHMSAccountPlugin",
     "com.huawei.cordovahmsgmscheckplugin": "file:CordovaHMSPlugin/CordovaHMSGMSCheckPlugin",
+    "com.huawei.cordovahmslocationplugin": "file:CordovaHMSPlugin/CordovaHMSLocationPlugin",
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-browsersync-gen2": "^1.1.7",

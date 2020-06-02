@@ -39,6 +39,14 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/com.huawei.cordovahmslocationplugin/www/CordovaHMSLocationPlugin.js",
+        "id": "com.huawei.cordovahmslocationplugin.CordovaHMSLocationPlugin",
+        "pluginId": "com.huawei.cordovahmslocationplugin",
+        "clobbers": [
+            "cordova.plugins.CordovaHMSLocationPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -48,7 +56,8 @@ module.exports.metadata =
     "cordova-plugin-browsersync-gen2": "1.1.7",
     "com.huawei.cordovahmsaccountplugin": "1.0.0",
     "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
-    "cordova-plugin-dialogs": "2.0.2"
+    "cordova-plugin-dialogs": "2.0.2",
+    "com.huawei.cordovahmslocationplugin": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

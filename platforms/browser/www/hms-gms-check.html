@@ -93,7 +93,6 @@
 
       <!-- MAIN CONTENT START -->
       <div data-role="main" class="ui-content">
-        
         <!-- HEADER START -->
         <div class="headerSection">
           <div class="headerTitleWrapper">
@@ -104,42 +103,50 @@
           </div>
         </div>
         <!-- HEADER END -->
-        
-        <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
-               <thead>
-                 <tr>
-                   <th data-priority="1">Mobile Service</th>
-                   <th data-priority="1">Availability</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 <tr>
-                   <th>GMS</th>
-                   <td id="gms-available"></td>
-                 </tr>
-                 <tr>
-                     <th>HMS</th>
-                     <td id="hms-available"></td>
-                   </tr>
-               </tbody>
-             </table>
 
-          <!-- <div class="toastmsg" style="display: none;"></div> -->
+        <table
+          data-role="table"
+          id="table-column-toggle"
+          data-mode="columntoggle"
+          class="ui-responsive table-stroke"
+        >
+          <thead>
+            <tr>
+              <th data-priority="1">Mobile Service</th>
+              <th data-priority="1">Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>GMS</th>
+              <td id="gms-available"></td>
+            </tr>
+            <tr>
+              <th>HMS</th>
+              <td id="hms-available"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- <div class="toastmsg" style="display: none;"></div> -->
+      </div>
+      <!-- MAIN CONTENT END -->
+
+      <script>
+        $(document)
+          .off("pageshow", "#page-check")
+          .on("pageshow", "#page-check", function () {
+            app.isHmsAvailable();
+            app.isGmsAvailable();
+
+            setTimeout(() => {
+              var gms = app.gmsAvailable ? "Available" : "Not Available";
+              var hms = app.hmsAvailable ? "Available" : "Not Available";
+              $("#gms-available").html(gms);
+              $("#hms-available").html(hms);
+            }, 100);
+          });
+      </script>
     </div>
-    <!-- MAIN CONTENT END -->
-    <script>
-    $(document).off('pageshow','#page-check').on('pageshow','#page-check',function(){
-      app.isHmsAvailable();
-      app.isGmsAvailable();
-      
-      setTimeout(()=>{
-        var gms = app.gmsAvailable?"Available": "Not Available";
-        var hms = app.hmsAvailable?"Available": "Not Available";
-        $("#gms-available").html(gms);
-        $("#hms-available").html(hms); 
-      }, 100);
-      
-    });
-    </script>
   </body>
 </html>
