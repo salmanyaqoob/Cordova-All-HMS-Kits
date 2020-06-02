@@ -1,0 +1,17 @@
+{
+  "name": "com.huawei.cordovahmsaccountplugin",
+  "version": "1.0.0",
+  "description": "Account Kit 4.0",
+  "cordova": {
+    "id": "com.huawei.cordovahmsaccountplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}

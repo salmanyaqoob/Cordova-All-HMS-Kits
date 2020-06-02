@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:rim="http://www.blackberry.com/ns/widgets" id="cordova-plugin-browsersync-gen2" version="1.1.7">
+    <name>cordova-plugin-browsersync-gen2</name>
+    <description>A fork of original Cordova Plugin to integrate browser-sync in the workflow</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,plugin,browsersync,browser-sync,browser,sync</keywords>
+    <repo>https://github.com/DimitrisRK/cordova-plugin-browsersync-gen2.git</repo>
+    <hook type="before_serve" src="lib/pluginHook.js" />
+    <hook type="after_prepare" src="lib/pluginHook.js" />
+</plugin>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="com.huawei.analyticsplugin"
+    version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <js-module name="HMSAnalyticsPlugin" src="www/HMSAnalyticsPlugin.js">
+        <clobbers target="cordova.plugins.HMSAnalyticsPlugin" />
+    </js-module>
+    <name>HMSAnalyticsPlugin</name>
+    <platform name="android">
+        <!-- hook for add maven repositories and agc plugin-->
+        <hook src="scripts/android/after_plugin_install.js" type="after_plugin_install" />
+        <hook src="scripts/android/before_plugin_uninstall.js" type="before_plugin_uninstall" />
+
+        <framework custom="true" src="src/android/build.gradle" type="gradleReference" />
+        <!-- Analytics Kit dependency-->
+        <framework src="com.huawei.hms:hianalytics:4.0.0.303" />
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="HMSAnalyticsPlugin">
+                <param name="android-package"
+                    value="com.huawei.analyticsplugin.HMSAnalyticsPlugin" />
+				<param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/HMSAnalyticsPlugin.java"
+            target-dir="src/com/huawei/analyticsplugin" />
+    </platform>
+    <!-- Script help to copy agconnect-services.json to right places-->
+    <hook src="scripts/after_prepare.js" type="after_prepare" />
+</plugin>

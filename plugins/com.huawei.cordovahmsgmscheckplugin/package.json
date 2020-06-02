@@ -1,0 +1,17 @@
+{
+  "name": "com.huawei.cordovahmsgmscheckplugin",
+  "version": "1.0.0",
+  "description": "Account Check Kit 4.0",
+  "cordova": {
+    "id": "com.huawei.cordovahmsgmscheckplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}

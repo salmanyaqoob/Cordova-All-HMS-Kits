@@ -1,0 +1,68 @@
+{
+  "_from": "cordova-plugin-browsersync-gen2",
+  "_id": "cordova-plugin-browsersync-gen2@1.1.7",
+  "_inBundle": false,
+  "_integrity": "sha512-10shp7zdzoyNLq4oAMWVqPCMVUEZFW8arSKPKq+pAEXIP9+syhFo8v5Lk4FymTHSPq6RuqS+wHX5XRiRn7vERQ==",
+  "_location": "/cordova-plugin-browsersync-gen2",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-browsersync-gen2",
+    "name": "cordova-plugin-browsersync-gen2",
+    "escapedName": "cordova-plugin-browsersync-gen2",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-browsersync-gen2/-/cordova-plugin-browsersync-gen2-1.1.7.tgz",
+  "_shasum": "04b2268417186f9e935facf1458640736fa454b6",
+  "_spec": "cordova-plugin-browsersync-gen2",
+  "_where": "D:\\workspace\\cordova\\allhms",
+  "author": {
+    "name": "Dimitris - Rafail Katsampas",
+    "email": "katsampasdr@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/DimitrisRK/cordova-plugin-browsersync-gen2/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-browsersync-gen2",
+    "platforms": [
+      "android",
+      "browser",
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.0",
+    "cheerio": "^1.0.0-rc.2",
+    "csp-parse": "0.0.2",
+    "elementtree": "^0.1.6",
+    "glob": "^7.1.2",
+    "plist": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "A fork of original Cordova Plugin to integrate browser-sync in the workflow",
+  "homepage": "https://github.com/DimitrisRK/cordova-plugin-browsersync-gen2#readme",
+  "id": "cordova-plugin-browsersync-gen2",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "name": "cordova-plugin-browsersync-gen2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimitrisRK/cordova-plugin-browsersync-gen2.git"
+  },
+  "version": "1.1.7"
+}

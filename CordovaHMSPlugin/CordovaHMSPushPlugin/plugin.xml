@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?><!-- Plugin Id and Version-->
+<plugin xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.huawei.cordovahmspushplugin" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <js-module name="CordovaHMSPushPlugin" src="www/CordovaHMSPushPlugin.js">
+        <clobbers target="cordova.plugins.CordovaHMSPushPlugin" />
+    </js-module>
+    <!-- Plugin Name -->
+    <name>CordovaHMSPushPlugin</name>
+    <platform name="android">
+        <!-- hook for add maven repositories and agc plugin-->
+        <hook src="scripts/android/after_plugin_install.js" type="after_plugin_install" />
+        <hook src="scripts/android/before_plugin_uninstall.js" type="before_plugin_uninstall" />
+
+        <framework custom="true" src="src/android/build.gradle" type="gradleReference" />
+        <!-- Push Kit dependency-->
+        <framework src="com.huawei.hms:push:4.0.0.300" />
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="CordovaHMSPushPlugin">
+                <param name="android-package"
+                    value="com.huawei.cordovahmspushplugin.CordovaHMSPushPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+			<service android:exported="false" android:name="com.huawei.cordovahmspushplugin.MessageService">
+				<intent-filter>
+					<action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+				</intent-filter>
+			</service>
+		</config-file>
+        <source-file src="src/android/CordovaHMSPushPlugin.java"
+            target-dir="src/com/huawei/cordovahmspushplugin" />
+		<source-file src="src/android/MessageService.java"
+			target-dir="src/com/huawei/cordovahmspushplugin" />
+    </platform>
+    <!-- Script help to copy agconnect-services.json to right places-->
+    <hook src="scripts/after_prepare.js" type="after_prepare" />
+</plugin>
