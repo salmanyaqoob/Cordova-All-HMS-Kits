@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Map Kit</title>
+	</head>
+	<body>
+		<div style="text-align: center;">
+			<input type="button" id="addMarker" value="Add Marker"/>
+		</div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript">
+			document.getElementById('addMarker').onclick = function() {
+				map_api.addMarker();
+			};
+		</script>
+	</body>
+</html>

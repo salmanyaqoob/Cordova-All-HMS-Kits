@@ -109,26 +109,32 @@
             id="requestlocation"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
           >
-            request location
+            Request Location
           </button>
           <button
             id="stoplocation"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
           >
-            remove location
+            Remove Location
           </button>
           <button
             id="getlastlocation"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
           >
-            last location
+            Last Location
           </button>
+
           <button
+            id="openMapView"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
-            onclick="hello()"
           >
-            hello()
+            Huawei Map
           </button>
+        </div>
+
+        <div class="ui-body ui-body-a ui-corner-all">
+          <h3>Location Logs</h3>
+          <div id="locationlog"></div>
         </div>
 
         <!-- <div class="toastmsg" style="display: none;"></div> -->
@@ -137,13 +143,32 @@
 
       <script>
         $(document)
-          .off("pageshow", "#page-location")
-          .on("pageshow", "#page-location", function () {});
+          .off("pageshow", "#page-page-location")
+          .on("pageshow", "#page-page-location", function () {});
 
-        if (app.initialized) {
-          document.getElementById("requestlocation").onclick =
-            app.RequestLocation;
-        }
+        $("#requestlocation")
+          .off()
+          .on("click", function (e) {
+            app.RequestLocation();
+          });
+
+        $("#stoplocation")
+          .off()
+          .on("click", function (e) {
+            app.RemoveLocation();
+          });
+
+        $("#getlastlocation")
+          .off()
+          .on("click", function (e) {
+            app.Getlastlocation();
+          });
+        // $("#openMapView")
+        //   .off()
+        //   .on("click", function (e) {
+        //     alert("sa");
+        //     click_api.openMap();
+        //   });
       </script>
     </div>
   </body>

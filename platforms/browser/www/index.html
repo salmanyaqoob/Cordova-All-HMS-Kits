@@ -101,14 +101,17 @@
             HMS / GMS Check
           </a>
           <a
-            href="location2.html"
+            href="location.html"
             class="ui-btn ui-corner-all ui-btn-a ui-shadow"
           >
             HMS Location
           </a>
-          <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
+          <button
+            id="openMapView"
+            class="ui-btn ui-corner-all ui-btn-a ui-shadow"
+          >
             Huawei Map
-          </a>
+          </button>
 
           <a href="#" class="ui-btn ui-corner-all ui-btn-a ui-shadow">
             HMS Push
@@ -134,6 +137,15 @@
         <div class="toastmsg" style="display: none;"></div>
       </div>
       <!-- MAIN CONTENT END -->
+
+      <script>
+        // $("#openMapView")
+        //   .off()
+        //   .on("click", function (e) {
+        //     alert("saaaaaaaa");
+        //     // click_api.openMap();
+        //   });
+      </script>
     </div>
   </body>
 </html>

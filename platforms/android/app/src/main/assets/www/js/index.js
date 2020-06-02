@@ -58,6 +58,13 @@ var app = {
     // Comming Soon
     document.getElementById("scan-kit").onclick = app.makeDialog;
 
+    // Map
+    document.getElementById("openMapView").onclick = function () {
+      alert("sa");
+      // window.location.href="./test.html"; //在原有窗口打开
+      click_api.openMap();
+    };
+
     // Location
     // document.getElementById("requestlocation").onclick = app.RequestLocation;
     // document.getElementById("stoplocation").onclick = app.RemoveLocation;
@@ -72,10 +79,7 @@ var app = {
     // document.getElementById("signInByAuthCode").onclick = app.SignInByAuthCode;
     // document.getElementById("signOut").onclick = app.SignOut;
     // document.getElementById("revokeAuth").onclick = app.RevokeAuth;
-    // document.getElementById("openMapView").onclick = function () {
-    //   // window.location.href="./test.html"; //在原有窗口打开
-    //   click_api.openMap();
-    // };
+
     // document.getElementById("logEvent").onclick = app.LogEvent;
     // document.getElementById("enterPms").onclick = app.EnterPms;
   },

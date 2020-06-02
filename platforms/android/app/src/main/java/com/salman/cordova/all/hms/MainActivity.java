@@ -45,6 +45,9 @@ public class MainActivity extends CordovaActivity
 
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+
+        SystemWebView systemWebView = (SystemWebView) appView.getView();
+        systemWebView.addJavascriptInterface(new JSInterface(), "click_api");
     }
 
     private final class JSInterface {
