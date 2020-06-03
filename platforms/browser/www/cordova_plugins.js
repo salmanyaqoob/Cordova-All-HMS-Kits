@@ -49,19 +49,19 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.huawei.cordovahmsgmscheckplugin/www/CordovaHMSGMSCheckPlugin.js",
-        "id": "com.huawei.cordovahmsgmscheckplugin.CordovaHMSGMSCheckPlugin",
-        "pluginId": "com.huawei.cordovahmsgmscheckplugin",
-        "clobbers": [
-            "cordova.plugins.CordovaHMSGMSCheckPlugin"
-        ]
-    },
-    {
         "file": "plugins/com.huawei.analyticsplugin/www/HMSAnalyticsPlugin.js",
         "id": "com.huawei.analyticsplugin.HMSAnalyticsPlugin",
         "pluginId": "com.huawei.analyticsplugin",
         "clobbers": [
             "cordova.plugins.HMSAnalyticsPlugin"
+        ]
+    },
+    {
+        "file": "plugins/com.huawei.cordovahmsgmscheckplugin/www/CordovaHMSGMSCheckPlugin.js",
+        "id": "com.huawei.cordovahmsgmscheckplugin.CordovaHMSGMSCheckPlugin",
+        "pluginId": "com.huawei.cordovahmsgmscheckplugin",
+        "clobbers": [
+            "cordova.plugins.CordovaHMSGMSCheckPlugin"
         ]
     }
 ];
@@ -74,8 +74,8 @@ module.exports.metadata =
     "cordova-plugin-dialogs": "2.0.2",
     "com.huawei.cordovahmslocationplugin": "1.0.0",
     "com.huawei.cordovahmspushplugin": "1.0.0",
-    "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
-    "com.huawei.analyticsplugin": "1.0.0"
+    "com.huawei.analyticsplugin": "1.0.0",
+    "com.huawei.cordovahmsgmscheckplugin": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

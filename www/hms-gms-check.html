@@ -133,23 +133,52 @@
       <!-- MAIN CONTENT END -->
 
       <script>
+        document.addEventListener(
+          "deviceready",
+          this.onDeviceReadyCheck.bind(this),
+          false
+        );
+
+        async function onDeviceReadyCheck() {
+          await checkGMS();
+          await checkHMS();
+        }
+
+        function checkGMS() {
+          const isGmsAvailableFn = app.isGmsAvailableFn;
+
+          const isGmsAvailable = app.promisify(
+            isGmsAvailableFn.isGmsAvailable.bind(isGmsAvailableFn)
+          );
+
+          isGmsAvailable().then(
+            (status) => {
+              var gms = status ? "Available" : "Not Available";
+              var gmsClass = status ? "success" : "error";
+              $("#gms-available").html(app.appendP(gms, gmsClass));
+            },
+            (error) => alert(error)
+          );
+        }
+
+        function checkHMS() {
+          const isHmsAvailableFn = app.isHmsAvailableFn;
+          const isHmsAvailable = app.promisify(
+            isHmsAvailableFn.isHmsAvailable.bind(isHmsAvailableFn)
+          );
+          isHmsAvailable().then(
+            (status) => {
+              var hms = status ? "Available" : "Not Available";
+              var hmsClass = status ? "success" : "error";
+              $("#hms-available").html(app.appendP(hms, hmsClass));
+            },
+            (error) => alert(error)
+          );
+        }
+
         $(document)
           .off("pageshow", "#page-check")
-          .on("pageshow", "#page-check", function () {
-            app.isHmsAvailable();
-            app.isGmsAvailable();
-
-            setTimeout(() => {
-              var gms = app.gmsAvailable ? "Available" : "Not Available";
-              var hms = app.hmsAvailable ? "Available" : "Not Available";
-
-              var gmsClass = app.gmsAvailable ? "success" : "error";
-              var hmsClass = app.hmsAvailable ? "success" : "error";
-
-              $("#gms-available").html(app.appendP(gms, gmsClass));
-              $("#hms-available").html(app.appendP(hms, hmsClass));
-            }, 100);
-          });
+          .on("pageshow", "#page-check", function () {});
       </script>
     </div>
   </body>

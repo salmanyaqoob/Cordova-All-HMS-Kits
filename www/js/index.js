@@ -55,8 +55,8 @@ var app = {
     this.receivedEvent("deviceready");
 
     // HMS & GMS Check
-    this.isGmsAvailable();
-    this.isHmsAvailable();
+    // this.isGmsAvailable();
+    // this.isHmsAvailable();
 
     // Comming Soon
     document.getElementById("iapOpen").onclick = app.makeDialog;
@@ -110,40 +110,38 @@ var app = {
     );
   },
 
-  // Check HMS Available
-  isHmsAvailable: function () {
-    console.log("checkHMS");
-    try {
-      cordova.plugins.CordovaHMSGMSCheckPlugin.isHmsAvailable(
-        "index.js",
-        (_res) => {
-          this.hmsAvailable = _res === "true";
-        },
-        (_err) => {
-          alert(_err);
-        }
-      );
-    } catch (_e) {
-      alert(JSON.stringify(_e, "\n", 4));
-    }
-  },
-
   // Check GMS Available
-  isGmsAvailable: function () {
-    console.log("checkGMS");
-    try {
+  isGmsAvailableFn: {
+    isGmsAvailable: function (success, failure) {
       cordova.plugins.CordovaHMSGMSCheckPlugin.isGmsAvailable(
         "index.js",
         (_res) => {
-          this.gmsAvailable = _res === "true";
+          var gmsAvailable = _res === "true";
+          this.gmsAvailable = gmsAvailable;
+          success(gmsAvailable);
         },
         (_err) => {
-          alert(_err);
+          failure(_err);
         }
       );
-    } catch (_e) {
-      alert(JSON.stringify(_e, "\n", 4));
-    }
+    },
+  },
+
+  // Check HMS Available
+  isHmsAvailableFn: {
+    isHmsAvailable: function (success, failure) {
+      cordova.plugins.CordovaHMSGMSCheckPlugin.isHmsAvailable(
+        "index.js",
+        (_res) => {
+          var hmsAvailable = _res === "true";
+          this.hmsAvailable = hmsAvailable;
+          success(hmsAvailable);
+        },
+        (_err) => {
+          failure(_err);
+        }
+      );
+    },
   },
 
   RequestLocation: function () {
@@ -393,6 +391,44 @@ var app = {
   appendP: function (text, pClass) {
     return "<p class='" + pClass + "'>" + text + "</p>";
   },
+
+  promisify: (f) => (...a) => new Promise((res, rej) => f(...a, res, rej)),
+
+  // // Check HMS Available
+  // isHmsAvailable: function () {
+  //   console.log("checkHMS");
+  //   try {
+  //     cordova.plugins.CordovaHMSGMSCheckPlugin.isHmsAvailable(
+  //       "index.js",
+  //       (_res) => {
+  //         this.hmsAvailable = _res === "true";
+  //       },
+  //       (_err) => {
+  //         alert(_err);
+  //       }
+  //     );
+  //   } catch (_e) {
+  //     alert(JSON.stringify(_e, "\n", 4));
+  //   }
+  // },
+
+  // // Check GMS Available
+  // isGmsAvailable: function () {
+  //   console.log("checkGMS");
+  //   try {
+  //     cordova.plugins.CordovaHMSGMSCheckPlugin.isGmsAvailable(
+  //       "index.js",
+  //       (_res) => {
+  //         this.gmsAvailable = _res === "true";
+  //       },
+  //       (_err) => {
+  //         alert(_err);
+  //       }
+  //     );
+  //   } catch (_e) {
+  //     alert(JSON.stringify(_e, "\n", 4));
+  //   }
+  // },
 
   //   EnterPms: function () {
   //     console.log("CheckIap");

@@ -32,6 +32,8 @@ var app = {
   initialized: false,
   hmsAvailable: false,
   gmsAvailable: false,
+  hmsLoaded: false,
+  gmsLoaded: false,
   locationLog: "",
   pushLog: "",
   accountlog: "",
@@ -55,11 +57,12 @@ var app = {
     this.receivedEvent("deviceready");
 
     // HMS & GMS Check
-    this.isGmsAvailable();
-    this.isHmsAvailable();
+    // this.isGmsAvailable();
+    // this.isHmsAvailable();
 
     // Comming Soon
-    document.getElementById("scan-kit").onclick = app.makeDialog;
+    document.getElementById("iapOpen").onclick = app.makeDialog;
+    document.getElementById("scanKitOpen").onclick = app.makeDialog;
 
     // Map
     document.getElementById("openMapView").onclick = function () {
@@ -117,6 +120,7 @@ var app = {
         "index.js",
         (_res) => {
           this.hmsAvailable = _res === "true";
+          this.hmsLoaded = true;
         },
         (_err) => {
           alert(_err);
@@ -135,6 +139,7 @@ var app = {
         "index.js",
         (_res) => {
           this.gmsAvailable = _res === "true";
+          this.gmsLoaded = true;
         },
         (_err) => {
           alert(_err);
@@ -373,7 +378,6 @@ var app = {
       cordova.plugins.HMSAnalyticsPlugin.logEvent(
         message,
         (_res) => {
-          alert("LogEvent");
           app.analyticslog =
             app.analyticslog +
             this.appendP("Event log Successfully", "success");
@@ -392,6 +396,23 @@ var app = {
 
   appendP: function (text, pClass) {
     return "<p class='" + pClass + "'>" + text + "</p>";
+  },
+
+  promisify: (f) => (...a) => new Promise((res, rej) => f(...a, res, rej)),
+
+  isGmsAvailableFn: {
+    isGmsAvailable: function (success, failure) {
+      cordova.plugins.CordovaHMSGMSCheckPlugin.isGmsAvailable(
+        "index.js",
+        (_res) => {
+          var hmsAvailable = _res === "true";
+          success(hmsAvailable);
+        },
+        (_err) => {
+          failure(_err);
+        }
+      );
+    },
   },
 
   //   EnterPms: function () {

@@ -47,7 +47,10 @@ public class CordovaHMSGMSCheckPlugin extends CordovaPlugin {
             isAvailable = (com.huawei.hms.api.ConnectionResult.SUCCESS == result);
         }
         Log.i("Cordova", "isHmsAvailable: " + isAvailable);
-        String msg = ""+isAvailable;
+        String msg = "false";
+        if(isAvailable){
+            msg = "true";
+        }
         outputCallbackContext(0, msg);
     }
 
@@ -59,7 +62,10 @@ public class CordovaHMSGMSCheckPlugin extends CordovaPlugin {
             isAvailable = (com.google.android.gms.common.ConnectionResult.SUCCESS == result);
         }
         Log.i("Cordova",  "isGmsAvailable: " + isAvailable);
-        String msg = ""+isAvailable;
+        String msg = "false";
+        if(isAvailable){
+            msg = "true";
+        }
         outputCallbackContext(0, msg);
     }
 

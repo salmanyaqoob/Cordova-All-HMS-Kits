@@ -521,7 +521,7 @@ label.error {
 .headerSection {
   height: 180px;
   width: 100%;
-  background-color: #dddddd;
+  background-color: #cfd0ff;
   display: flex;
   justify-content: space-around;
 }

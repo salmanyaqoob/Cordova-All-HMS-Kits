@@ -24,8 +24,8 @@
       "cordova-plugin-dialogs": {},
       "com.huawei.cordovahmslocationplugin": {},
       "com.huawei.cordovahmspushplugin": {},
-      "com.huawei.cordovahmsgmscheckplugin": {},
-      "com.huawei.analyticsplugin": {}
+      "com.huawei.analyticsplugin": {},
+      "com.huawei.cordovahmsgmscheckplugin": {}
     },
     "platforms": [
       "android"

@@ -28,10 +28,10 @@
     "com.huawei.cordovahmspushplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
-    "com.huawei.cordovahmsgmscheckplugin": {
+    "com.huawei.analyticsplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
-    "com.huawei.analyticsplugin": {
+    "com.huawei.cordovahmsgmscheckplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },

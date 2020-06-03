@@ -133,22 +133,63 @@
       <!-- MAIN CONTENT END -->
 
       <script>
+        app.isHmsAvailable();
+        app.isGmsAvailable();
+        if (
+          app.initialized === true &&
+          app.hmsLoaded === true &&
+          app.gmsLoaded === true
+        ) {
+          alert("app initialized");
+          var gms = app.gmsAvailable ? "Available" : "Not Available";
+          var hms = app.hmsAvailable ? "Available" : "Not Available";
+
+          var gmsClass = app.gmsAvailable ? "success" : "error";
+          var hmsClass = app.hmsAvailable ? "success" : "error";
+
+          $("#gms-available").html(app.appendP(gms, gmsClass));
+          $("#hms-available").html(app.appendP(hms, hmsClass));
+        }
+
+        // const promisify = (f) => (...a) =>
+        //   new Promise((res, rej) => f(...a, res, rej));
+
+        const isGmsAvailableFn = {
+          isGmsAvailable: function (success, failure) {
+            cordova.plugins.CordovaHMSGMSCheckPlugin.isGmsAvailable(
+              "index.js",
+              (_res) => {
+                alert(_res.length);
+                var hmsAvailable = _res === "true";
+                success(hmsAvailable);
+              },
+              (_err) => {
+                failure(_err);
+              }
+            );
+          },
+        };
+
+        const isGmsAvailable = app.promisify(
+          isGmsAvailableFn.isGmsAvailable.bind(isGmsAvailableFn)
+        );
+
+        isGmsAvailable().then((status) => {
+          // console.log;
+          alert("status:" + status);
+        }, console.error);
+
         $(document)
           .off("pageshow", "#page-check")
           .on("pageshow", "#page-check", function () {
-            app.isHmsAvailable();
-            app.isGmsAvailable();
-
             setTimeout(() => {
-              var gms = app.gmsAvailable ? "Available" : "Not Available";
-              var hms = app.hmsAvailable ? "Available" : "Not Available";
-
-              var gmsClass = app.gmsAvailable ? "success" : "error";
-              var hmsClass = app.hmsAvailable ? "success" : "error";
-
-              $("#gms-available").html(app.appendP(gms, gmsClass));
-              $("#hms-available").html(app.appendP(hms, hmsClass));
-            }, 100);
+              // var gms = app.gmsAvailable ? "Available" : "Not Available";
+              // var hms = app.hmsAvailable ? "Available" : "Not Available";
+              // var gmsClass = app.gmsAvailable ? "success" : "error";
+              // var hmsClass = app.hmsAvailable ? "success" : "error";
+              // $("#gms-available").html(app.appendP(gms, gmsClass));
+              // $("#hms-available").html(app.appendP(hms, hmsClass));
+            }, 500);
           });
       </script>
     </div>

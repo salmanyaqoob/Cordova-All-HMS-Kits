@@ -25,10 +25,10 @@
     "com.huawei.cordovahmspushplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
-    "com.huawei.cordovahmsgmscheckplugin": {
+    "com.huawei.analyticsplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
-    "com.huawei.analyticsplugin": {
+    "com.huawei.cordovahmsgmscheckplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },
@@ -83,19 +83,19 @@
       ]
     },
     {
-      "file": "plugins/com.huawei.cordovahmsgmscheckplugin/www/CordovaHMSGMSCheckPlugin.js",
-      "id": "com.huawei.cordovahmsgmscheckplugin.CordovaHMSGMSCheckPlugin",
-      "pluginId": "com.huawei.cordovahmsgmscheckplugin",
-      "clobbers": [
-        "cordova.plugins.CordovaHMSGMSCheckPlugin"
-      ]
-    },
-    {
       "file": "plugins/com.huawei.analyticsplugin/www/HMSAnalyticsPlugin.js",
       "id": "com.huawei.analyticsplugin.HMSAnalyticsPlugin",
       "pluginId": "com.huawei.analyticsplugin",
       "clobbers": [
         "cordova.plugins.HMSAnalyticsPlugin"
+      ]
+    },
+    {
+      "file": "plugins/com.huawei.cordovahmsgmscheckplugin/www/CordovaHMSGMSCheckPlugin.js",
+      "id": "com.huawei.cordovahmsgmscheckplugin.CordovaHMSGMSCheckPlugin",
+      "pluginId": "com.huawei.cordovahmsgmscheckplugin",
+      "clobbers": [
+        "cordova.plugins.CordovaHMSGMSCheckPlugin"
       ]
     }
   ],
@@ -106,7 +106,7 @@
     "cordova-plugin-dialogs": "2.0.2",
     "com.huawei.cordovahmslocationplugin": "1.0.0",
     "com.huawei.cordovahmspushplugin": "1.0.0",
-    "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
-    "com.huawei.analyticsplugin": "1.0.0"
+    "com.huawei.analyticsplugin": "1.0.0",
+    "com.huawei.cordovahmsgmscheckplugin": "1.0.0"
   }
 }
