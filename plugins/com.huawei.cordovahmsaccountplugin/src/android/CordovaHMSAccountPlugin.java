@@ -81,7 +81,7 @@ public class CordovaHMSAccountPlugin extends CordovaPlugin {
 
     private void signInWithIdToken() {
         HuaweiIdAuthParams mHuaweiIdAuthParams =
-            new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM).setIdToken().createParams();
+            new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM).setIdToken().setEmail().createParams();
         mHuaweiIdAuthService = HuaweiIdAuthManager.getService(cordova.getActivity(), mHuaweiIdAuthParams);
         cordova.startActivityForResult(this, mHuaweiIdAuthService.getSignInIntent(), REQUEST_SIGN_IN_LOGIN);
     }
@@ -118,7 +118,11 @@ public class CordovaHMSAccountPlugin extends CordovaPlugin {
                 Task<AuthHuaweiId> authHuaweiIdTask = HuaweiIdAuthManager.parseAuthResultFromIntent(data);
                 if (authHuaweiIdTask.isSuccessful()) {
                     AuthHuaweiId huaweiAccount = authHuaweiIdTask.getResult();
-                    String msg = "signIn success " + huaweiAccount.getDisplayName();
+                    String name = huaweiAccount.getDisplayName();
+                    String email = huaweiAccount.getEmail();
+                    String avatarUri = huaweiAccount.getAvatarUri().toString();
+
+                    String msg = "Name: " + name + " Email: " + email + " AvatarUri: " + avatarUri;
                     outputCallbackContext(0, msg);
                     Log.i(TAG, msg);
                 } else {

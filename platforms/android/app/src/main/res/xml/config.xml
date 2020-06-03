@@ -1,17 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.salman.cordova.all.hms" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="CordovaHMSAccountPlugin">
-        <param name="android-package" value="com.huawei.cordovahmsaccountplugin.CordovaHMSAccountPlugin" />
-    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
     <feature name="Toast">
         <param name="android-package" value="nl.xservices.plugins.Toast" />
-    </feature>
-    <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
     <feature name="CordovaHMSLocationPlugin">
         <param name="android-package" value="com.huawei.cordovahmslocationplugin.CordovaHMSLocationPlugin" />
@@ -25,6 +19,9 @@
     </feature>
     <feature name="CordovaHMSGMSCheckPlugin">
         <param name="android-package" value="com.huawei.cordovahmsgmscheckplugin.CordovaHMSGMSCheckPlugin" />
+    </feature>
+    <feature name="CordovaHMSAccountPlugin">
+        <param name="android-package" value="com.huawei.cordovahmsaccountplugin.CordovaHMSAccountPlugin" />
     </feature>
     <name>Cordova All HMS</name>
     <description>

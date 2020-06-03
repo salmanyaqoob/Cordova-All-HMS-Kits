@@ -1,14 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
-      "id": "com.huawei.cordovahmsaccountplugin.CordovaHMSAccountPlugin",
-      "file": "plugins/com.huawei.cordovahmsaccountplugin/www/CordovaHMSAccountPlugin.js",
-      "pluginId": "com.huawei.cordovahmsaccountplugin",
-      "clobbers": [
-        "cordova.plugins.CordovaHMSAccountPlugin"
-      ]
-    },
-    {
       "id": "cordova-plugin-x-toast.Toast",
       "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
       "pluginId": "cordova-plugin-x-toast",
@@ -63,10 +55,17 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.plugins.CordovaHMSGMSCheckPlugin"
       ]
+    },
+    {
+      "id": "com.huawei.cordovahmsaccountplugin.CordovaHMSAccountPlugin",
+      "file": "plugins/com.huawei.cordovahmsaccountplugin/www/CordovaHMSAccountPlugin.js",
+      "pluginId": "com.huawei.cordovahmsaccountplugin",
+      "clobbers": [
+        "cordova.plugins.CordovaHMSAccountPlugin"
+      ]
     }
   ];
   module.exports.metadata = {
-    "com.huawei.cordovahmsaccountplugin": "1.0.0",
     "cordova-plugin-browsersync-gen2": "1.1.7",
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-x-toast": "2.7.2",
@@ -74,6 +73,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "com.huawei.cordovahmslocationplugin": "1.0.0",
     "com.huawei.cordovahmspushplugin": "1.0.0",
     "com.huawei.analyticsplugin": "1.0.0",
-    "com.huawei.cordovahmsgmscheckplugin": "1.0.0"
+    "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
+    "com.huawei.cordovahmsaccountplugin": "1.0.0"
   };
 });

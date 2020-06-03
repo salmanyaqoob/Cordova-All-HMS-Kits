@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "com.huawei.cordovahmsaccountplugin": {
-      "PACKAGE_NAME": "com.salman.cordova.all.hms"
-    },
     "cordova-plugin-browsersync-gen2": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
@@ -17,9 +14,6 @@
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
     "cordova-plugin-x-toast": {
-      "PACKAGE_NAME": "com.salman.cordova.all.hms"
-    },
-    "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
     "com.huawei.cordovahmslocationplugin": {
@@ -32,6 +26,9 @@
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
     "com.huawei.cordovahmsgmscheckplugin": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "com.huawei.cordovahmsaccountplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },

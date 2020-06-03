@@ -99,15 +99,11 @@ var app = {
   },
 
   makeDialog: function () {
-    function alertDismissed() {
-      // do something
-    }
-    navigator.notification.alert(
-      "This feature is comming soon.", // message
-      alertDismissed, // callback
-      "Comming Soon", // title
-      "Done" // buttonName
-    );
+    window.plugins.toast.showWithOptions({
+      message: "Coming Soon",
+      duration: "short",
+      position: "bottom",
+    });
   },
 
   // Check GMS Available

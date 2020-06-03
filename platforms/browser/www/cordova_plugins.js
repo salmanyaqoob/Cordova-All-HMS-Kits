@@ -9,30 +9,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.huawei.cordovahmsaccountplugin/www/CordovaHMSAccountPlugin.js",
-        "id": "com.huawei.cordovahmsaccountplugin.CordovaHMSAccountPlugin",
-        "pluginId": "com.huawei.cordovahmsaccountplugin",
-        "clobbers": [
-            "cordova.plugins.CordovaHMSAccountPlugin"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
-        "id": "cordova-plugin-dialogs.notification",
-        "pluginId": "cordova-plugin-dialogs",
-        "merges": [
-            "navigator.notification"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-dialogs/www/browser/notification.js",
-        "id": "cordova-plugin-dialogs.notification_browser",
-        "pluginId": "cordova-plugin-dialogs",
-        "merges": [
-            "navigator.notification"
-        ]
-    },
-    {
         "file": "plugins/com.huawei.cordovahmslocationplugin/www/CordovaHMSLocationPlugin.js",
         "id": "com.huawei.cordovahmslocationplugin.CordovaHMSLocationPlugin",
         "pluginId": "com.huawei.cordovahmslocationplugin",
@@ -63,6 +39,14 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.CordovaHMSGMSCheckPlugin"
         ]
+    },
+    {
+        "file": "plugins/com.huawei.cordovahmsaccountplugin/www/CordovaHMSAccountPlugin.js",
+        "id": "com.huawei.cordovahmsaccountplugin.CordovaHMSAccountPlugin",
+        "pluginId": "com.huawei.cordovahmsaccountplugin",
+        "clobbers": [
+            "cordova.plugins.CordovaHMSAccountPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -70,12 +54,11 @@ module.exports.metadata =
 {
     "cordova-plugin-x-toast": "2.7.2",
     "cordova-plugin-browsersync-gen2": "1.1.7",
-    "com.huawei.cordovahmsaccountplugin": "1.0.0",
-    "cordova-plugin-dialogs": "2.0.2",
     "com.huawei.cordovahmslocationplugin": "1.0.0",
     "com.huawei.cordovahmspushplugin": "1.0.0",
     "com.huawei.analyticsplugin": "1.0.0",
-    "com.huawei.cordovahmsgmscheckplugin": "1.0.0"
+    "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
+    "com.huawei.cordovahmsaccountplugin": "1.0.0"
 }
 // BOTTOM OF METADATA
 });
