@@ -9,22 +9,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-dialogs.notification",
-      "file": "plugins/cordova-plugin-dialogs/www/notification.js",
-      "pluginId": "cordova-plugin-dialogs",
-      "merges": [
-        "navigator.notification"
-      ]
-    },
-    {
-      "id": "cordova-plugin-dialogs.notification_android",
-      "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
-      "pluginId": "cordova-plugin-dialogs",
-      "merges": [
-        "navigator.notification"
-      ]
-    },
-    {
       "id": "com.huawei.cordovahmslocationplugin.CordovaHMSLocationPlugin",
       "file": "plugins/com.huawei.cordovahmslocationplugin/www/CordovaHMSLocationPlugin.js",
       "pluginId": "com.huawei.cordovahmslocationplugin",
@@ -69,7 +53,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-browsersync-gen2": "1.1.7",
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-x-toast": "2.7.2",
-    "cordova-plugin-dialogs": "2.0.2",
     "com.huawei.cordovahmslocationplugin": "1.0.0",
     "com.huawei.cordovahmspushplugin": "1.0.0",
     "com.huawei.analyticsplugin": "1.0.0",

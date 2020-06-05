@@ -122,9 +122,21 @@ public class CordovaHMSAccountPlugin extends CordovaPlugin {
                     String email = huaweiAccount.getEmail();
                     String avatarUri = huaweiAccount.getAvatarUri().toString();
 
-                    String msg = "Name: " + name + " Email: " + email + " AvatarUri: " + avatarUri;
-                    outputCallbackContext(0, msg);
-                    Log.i(TAG, msg);
+                    try {
+                        JSONObject jsonObj = new JSONObject();
+                        jsonObj.put("name", name);
+                        jsonObj.put("email", email);
+                        jsonObj.put("avatarUri", avatarUri);
+
+                        String msg = "Name: " + name + " Email: " + email + " AvatarUri: " + avatarUri;
+                        String msgJSONString = jsonObj.toString();
+
+                        outputCallbackContext(0, msgJSONString);
+                        Log.i(TAG, msg);
+                    } catch(Exception e){
+                        Log.e(TAG, e.toString());
+                        outputCallbackContext(1, e.toString());
+                    }
                 } else {
                     String msg = "signIn failed: " + ((ApiException) authHuaweiIdTask.getException()).getStatusCode();
                     outputCallbackContext(1, msg);

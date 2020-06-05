@@ -302,8 +302,8 @@ dependencies {
     implementation "com.huawei.hms:push:4.0.0.300"
     implementation "com.huawei.hms:hianalytics:4.0.0.300"
     implementation "com.huawei.hms:location:4.0.0.300"
-    implementation "com.huawei.hms:hwid:4.0.0.300"
     implementation "com.google.android.gms:play-services-base:17.2.1"
+    implementation "com.huawei.hms:hwid:4.0.0.300"
     // SUB-PROJECT DEPENDENCIES END
 }
 
