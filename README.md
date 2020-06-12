@@ -22,6 +22,10 @@ Cordova HMS packages integrated in this project :
 
 8.  **HMS Site Kit.** (Coming Soon)
 
+## Download APK
+For testing of Cordova project, please [download](https://github.com/salmanyaqoob/Cordova-All-HMS-Kits/raw/master/apks/cordova-all-hms-kits.apk) the apk file.
+
+
 ## Screenshots
 
 ### Application
