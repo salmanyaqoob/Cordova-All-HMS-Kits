@@ -107,6 +107,8 @@ var app = {
       apiKey:
         "CV79g/usw+tvbIqzY5vC+/nCVNBwrTlUYWkOLj/90qZUtv2v6qjgBFkO+VrbpcAVCpTL/iH0qX5MXjnA6gDPLQRj090q",
     };
+    app.sitelog = "";
+    document.getElementById("sitelog").innerHTML = app.sitelog;
     HMSSite.initializeService(
       config,
       function () {
