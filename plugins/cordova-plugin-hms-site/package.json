@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-hms-site",
+  "version": "4.0.4",
+  "description": "Huawei Site Cordova Plugin",
+  "cordova": {
+    "id": "cordova-plugin-hms-site",
+    "platforms": []
+  },
+  "keywords": [
+    "cordova",
+    "huaweisite",
+    "site",
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "files": [
+    "hooks/**",
+    "resources/**",
+    "src/**",
+    "www/**",
+    "LICENCE",
+    "package.json",
+    "plugin.xml",
+    "README.md"
+  ]
+}

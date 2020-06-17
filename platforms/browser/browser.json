@@ -27,6 +27,9 @@
     },
     "com.huawei.cordovahmsaccountplugin": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "cordova-plugin-hms-site": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },
   "dependent_plugins": {},
@@ -78,6 +81,14 @@
       "clobbers": [
         "cordova.plugins.CordovaHMSAccountPlugin"
       ]
+    },
+    {
+      "file": "plugins/cordova-plugin-hms-site/www/HMSSite.js",
+      "id": "cordova-plugin-hms-site.cordova-plugin-hms-site",
+      "pluginId": "cordova-plugin-hms-site",
+      "clobbers": [
+        "HMSSite"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -87,6 +98,7 @@
     "com.huawei.cordovahmspushplugin": "1.0.0",
     "com.huawei.analyticsplugin": "1.0.0",
     "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
-    "com.huawei.cordovahmsaccountplugin": "1.0.0"
+    "com.huawei.cordovahmsaccountplugin": "1.0.0",
+    "cordova-plugin-hms-site": "4.0.4"
   }
 }

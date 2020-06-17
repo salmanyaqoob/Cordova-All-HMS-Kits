@@ -22,6 +22,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+maven { url 'https://developer.huawei.com/repo/' } //This line is added by cordova-plugin-hms-site plugin
         maven { url 'http://developer.huawei.com/repo/' }
         maven { url 'http://developer.huawei.com/repo/' }
     }
@@ -31,6 +32,7 @@ buildscript {
         // in the individual module build.gradle files
 
         classpath 'com.android.tools.build:gradle:3.3.0'
+classpath 'com.huawei.agconnect:agcp:1.2.1.301' //This line is added by cordova-plugin-hms-site plugin
 
         classpath 'com.huawei.agconnect:agcp:1.2.0.300'
 
@@ -42,6 +44,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+maven { url 'https://developer.huawei.com/repo/' } //This line is added by cordova-plugin-hms-site plugin
         maven { url 'http://developer.huawei.com/repo/' }
         maven { url 'http://developer.huawei.com/repo/' }
     }

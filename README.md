@@ -23,8 +23,8 @@ Cordova HMS packages integrated in this project :
 8.  **HMS Site Kit.** (Coming Soon)
 
 ## Download APK
-For testing of Cordova project, please [download](https://github.com/salmanyaqoob/Cordova-All-HMS-Kits/raw/master/apks/cordova-all-hms-kits.apk) the apk file.
 
+For testing of Cordova project, please [download](https://github.com/salmanyaqoob/Cordova-All-HMS-Kits/raw/master/apks/cordova-all-hms-kits.apk) the apk file.
 
 ## Screenshots
 
@@ -71,6 +71,7 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
     cordova plugin add .\CordovaHMSPlugin\cordovaHmsPushPlugin
     cordova plugin add .\CordovaHMSPlugin\CordovaHMSAccountPlugin
     cordova plugin add .\CordovaHMSPlugin\HMSAnalyticsPlugin
+    cordova plugin add .\CordovaHMSPlugin\cordova-plugin-hms-site
 
 ### Remove plugins from Project
 
@@ -79,6 +80,7 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
     cordova plugin remove com.huawei.analyticsplugin
     cordova plugin remove com.huawei.cordovahmsaccountplugin
     cordova plugin remove com.huawei.cordovahmslocationplugin
+    cordova plugin remove cordova-plugin-hms-site
 
 ### Run Application on HMS Device
 
@@ -99,43 +101,55 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
 ### Huawei Map Kit:
 
 #### Codelab:
+
 [https://developer.huawei.com/consumer/en/codelab/HMSMapKit/index.html#0](https://developer.huawei.com/consumer/en/codelab/HMSMapKit/index.html#0)
 
 #### Document:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050329204](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050329204)
 
 #### Sample Code:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/rn-sample-code-0000001050153703](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/rn-sample-code-0000001050153703)
 
 #### Cordova Plugin:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001051053652](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001051053652)
 
 ### Huawei Location Kit:
 
-#### Codelab: 
+#### Codelab:
+
 [https://developer.huawei.com/consumer/en/codelab/HMSLocationKit/index.html#0](https://developer.huawei.com/consumer/en/codelab/HMSLocationKit/index.html#0)
 
-#### Document: 
+#### Document:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050140246](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050140246)
 
 #### Sample Code:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sample-code-0000001050142431](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sample-code-0000001050142431)
 
 #### Cordova Plugin:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050142491](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050142491)
 
 ### Push Kit:
 
-#### Codelab: 
+#### Codelab:
+
 [https://developer.huawei.com/consumer/en/codelab/HMSPushKit/index.html#0](https://developer.huawei.com/consumer/en/codelab/HMSPushKit/index.html#0)
 
-#### Document: 
+#### Document:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050135701](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050135701)
 
 #### Sample Code:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sample-code-0000001050135749](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sample-code-0000001050135749)
 
 #### Cordova Plugin:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050133798](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050133798)
 
 #### Push Kit Server Side code SDK:
@@ -146,49 +160,62 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
 
 ### Analytics Kit:
 
-#### Codelab: 
+#### Codelab:
+
 [https://developer.huawei.com/consumer/en/codelab/HMSAnalyticsKit-ReactNative/index.html#0](https://developer.huawei.com/consumer/en/codelab/HMSAnalyticsKit-ReactNative/index.html#0)
 
-#### Document: 
+#### Document:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050134725](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050134725)
 
 #### Sample Code:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sample-code-0000001050135749](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sample-code-0000001050135749)
 
 #### Cordova Plugin:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050133798](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050133798)
 
 ### Huawei Ads Kit:
 
-#### Document: 
+#### Document:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050437673](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050437673)
 
 #### Sample Code:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-samples-code-0000001050317376](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-samples-code-0000001050317376)
 
 #### Cordova Plugin:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050973699](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050973699)
 
 ### Huawei In-App Purchases:
 
-#### Document: 
+#### Document:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050132986](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050132986)
 
 #### Sample Code:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sdk-download-0000001050133052](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Examples/cordova-sdk-download-0000001050133052)
 
 #### Cordova Plugin:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050133052](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050133052)
 
 ### HMS Site Kit:
 
-#### Document: 
+#### Document:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050260022](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050260022)
 
 #### Sample Code:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050260022](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Guides/introduction-0000001050260022)
 
 #### Cordova Plugin:
+
 [https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050426037](https://developer.huawei.com/consumer/en/doc/development/HMS-Plugin-Library/cordova-sdk-download-0000001050426037)
 
 ### Note:
