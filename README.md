@@ -18,9 +18,9 @@ Cordova HMS packages integrated in this project :
 
 6.  **Huawei Account Kit.**
 
-7.  **HMS In App Purchase Kit.** (Coming Soon)
+7.  **HMS Site Kit.**
 
-8.  **HMS Site Kit.** (Coming Soon)
+8.  **HMS In App Purchase Kit.** (Coming Soon)
 
 ## Download APK
 
@@ -38,7 +38,7 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
 
 <img src="./screenshots/4.jpg" width="250"> <img src="./screenshots/5.jpg" width="250"> <img src="./screenshots/6.jpg" width="250">
 
-<img src="./screenshots/7.jpg" width="250">
+<img src="./screenshots/7.jpg" width="250"> <img src="./screenshots/8.jpg" width="250">
 
 ## Project Guide
 
