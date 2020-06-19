@@ -33,6 +33,9 @@
     },
     "cordova-plugin-hms-site": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "cordova-plugin-hms-ads": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },
   "dependent_plugins": {}

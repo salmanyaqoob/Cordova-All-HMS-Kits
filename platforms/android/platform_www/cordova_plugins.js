@@ -55,6 +55,19 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "HMSSite"
       ]
+    },
+    {
+      "id": "cordova-plugin-hms-ads.utils",
+      "file": "plugins/cordova-plugin-hms-ads/www/utils.js",
+      "pluginId": "cordova-plugin-hms-ads"
+    },
+    {
+      "id": "cordova-plugin-hms-ads.HMSAds",
+      "file": "plugins/cordova-plugin-hms-ads/www/HMSAds.js",
+      "pluginId": "cordova-plugin-hms-ads",
+      "clobbers": [
+        "HMSAds"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -66,6 +79,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "com.huawei.analyticsplugin": "1.0.0",
     "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
     "com.huawei.cordovahmsaccountplugin": "1.0.0",
-    "cordova-plugin-hms-site": "4.0.4"
+    "cordova-plugin-hms-site": "4.0.4",
+    "cordova-plugin-hms-ads": "4.0.4"
   };
 });

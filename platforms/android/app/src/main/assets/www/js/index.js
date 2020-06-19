@@ -27,6 +27,12 @@
 //   console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
 //   // document.getElementById('deviceready').classList.add('ready');
 // }
+const getId = (id) => document.getElementById(id);
+const ad = {
+  gender: 0,
+  nonPersonalizedAd: 0,
+};
+let nativeAdInstance = null;
 
 var app = {
   initialized: false,
@@ -37,6 +43,8 @@ var app = {
   accountlog: "",
   analyticslog: "",
   sitelog: "",
+  // Initialize an ad object
+
   // Application Constructor
   initialize: function () {
     if (this.initialized) return;
@@ -241,6 +249,218 @@ var app = {
         document.getElementById("sitelog").innerHTML = app.sitelog;
       }
     );
+  },
+
+  initAds: async function () {
+    // Initialize cordova.plugins.HMSAds
+    await HMSAds.init({
+      bannerFloat: false,
+    });
+    app.loadOptions();
+  },
+
+  loadOptions: function () {
+    // Load colors
+    Object.keys(HMSAds.Colors).forEach((color) => {
+      const opt = document.createElement("option");
+      opt.value = HMSAds.Colors[color];
+      opt.innerHTML = color;
+      if (color === "TRANSPARENT") {
+        opt.selected = true;
+      }
+      getId("bannerAdBgColor").appendChild(opt);
+      getId("splashLogoColor").appendChild(opt.cloneNode(true));
+    });
+
+    // Load banner sizes
+    Object.getOwnPropertyNames(HMSAds).forEach((constant) => {
+      if (constant.startsWith("BANNER_SIZE")) {
+        const opt = document.createElement("option");
+        opt.value = HMSAds[constant];
+        opt.innerHTML = constant.replace("BANNER_SIZE_", "");
+        if (constant.endsWith("320_50")) {
+          opt.selected = true;
+        }
+        getId("bannerAdSize").appendChild(opt);
+      }
+    });
+  },
+
+  // /////////////////////////////////////////////////////
+  // SplashAd example
+  // /////////////////////////////////////////////////////
+
+  splashAdCreate: async function () {
+    const splashAdInstance = new HMSAds.Splash();
+
+    await splashAdInstance.create({
+      logo: {
+        copyright: "Copyright Huawei 2020",
+        owner: "Huawei",
+        anchor: getId("splashLogoAnchor").value,
+        bg: getId("splashLogoColor").value,
+      },
+      // audioFocusType: HMSAds.NativeAd.AUDIO_...
+      // preload: true|false,
+      // adId: "..." // required if preload is true
+      // orientation: "..." // required if preload is true
+      // ad // required if preload is true
+    });
+
+    splashAdInstance.on("loaded", () => {
+      splashAdInstance.show();
+    });
+
+    // Subscribe the dismissed event here. We simply close the splash ad.
+    // You also may want to call destroy, if you won't be using the same
+    // splash again.
+    splashAdInstance.on("dismissed", () => {
+      splashAdInstance.cancel();
+      splashAdInstance.destroy();
+    });
+
+    splashAdInstance.load({
+      ad,
+      adId: "testq6zq98hecj",
+      orientation: HMSAds.SCREEN_ORIENTATION_PORTRAIT,
+    });
+  },
+
+  // /////////////////////////////////////////////////////
+  // BannerAd example
+  // /////////////////////////////////////////////////////
+
+  bannerAdCreate: async function () {
+    const bannerAdsInstance = new HMSAds.Banner();
+
+    bannerAdsInstance.on("loaded", () => {
+      console.log("bannerAdsInstance :: loaded");
+    });
+    bannerAdsInstance.on("failed", () => {
+      console.log("bannerAdsInstance :: failed");
+    });
+    bannerAdsInstance.on("closed", () => {
+      console.log("bannerAdsInstance :: closed");
+    });
+
+    await bannerAdsInstance.create({
+      adId: "testw6vs28auh3",
+      bannerAdSize: getId("bannerAdSize").value,
+      bgColor: getId("bannerAdBgColor").value,
+      anchor: getId("bannerAdPosition").value,
+      bannerRefresh: 50, // [50-250]
+    });
+
+    await bannerAdsInstance.loadAd(ad);
+  },
+
+  // /////////////////////////////////////////////////////
+  // RewardAd example
+  // /////////////////////////////////////////////////////
+
+  rewardAdCreate: async function () {
+    const rewardAdsInstance = new HMSAds.Reward();
+    await rewardAdsInstance.create({
+      adId: "testx9dtjwj8hp",
+      // immersive: true|false,
+      // data: "...",
+      // userId: "..."
+      // rewardVerifyConfig: {
+      //     data: "...",
+      //     userId: "..."
+      // }
+    });
+
+    // We subscrive the loaded event here, need to do it before
+    // calling loadAd function.
+    rewardAdsInstance.on("loaded", async () => {
+      await rewardAdsInstance.show();
+    });
+
+    rewardAdsInstance.loadAd(ad);
+  },
+
+  // /////////////////////////////////////////////////////
+  // InterstitialAd example
+  // /////////////////////////////////////////////////////
+
+  interstitialAdCreate: async function () {
+    const interstitialAdInstance = new HMSAds.Interstitial();
+    await interstitialAdInstance.create({
+      adId: "testb4znbuh3n2",
+    });
+
+    // We subscrive the loaded event here, need to do it before
+    // calling loadAd function
+    interstitialAdInstance.on("loaded", async () => {
+      await interstitialAdInstance.show();
+    });
+
+    interstitialAdInstance.loadAd(ad);
+  },
+
+  // /////////////////////////////////////////////////////
+  // NativeAd example
+  // /////////////////////////////////////////////////////
+
+  nativeAdCreate: async function () {
+    // Remove old ad
+    if (nativeAdInstance) {
+      await nativeAdInstance.destroy();
+    }
+
+    const template = getId("nativeAdTemplate").value;
+    const nativeElem = getId("native-ad-element");
+
+    // Pick a better size for given template
+    let adId = "testu7m3hc4gvm";
+    if (template === "small") {
+      nativeElem.style.height = "100px";
+    } else if (template === "full") {
+      nativeElem.style.height = "350px";
+    } else if (template === "banner") {
+      nativeElem.style.height = "200px";
+    } else if (template === "video") {
+      adId = "testy63txaom86";
+      nativeElem.style.height = "300px";
+    }
+
+    // Create a new native ad with selected template
+    nativeAdInstance = new HMSAds.Native();
+    await nativeAdInstance.create({
+      div: "native-ad-element",
+      template,
+      bg: "#E4E4E4",
+    });
+
+    // Subscribe ad load event, when loaded simply show the ad.
+    // We need to subscribe events before calling loadAd function
+    nativeAdInstance.on("nativeAdLoaded", async () => {
+      console.log("nativeAdInstance :: loaded");
+      await nativeAdInstance.show();
+    });
+
+    // Load the ad.
+    nativeAdInstance.loadAd({
+      ad,
+      adId,
+    });
+  },
+
+  // /////////////////////////////////////////////////////
+  // Other functions
+  // /////////////////////////////////////////////////////
+
+  getOaidResult: async () => {
+    const result = await HMSAds.getOaidResult();
+    getId("oaidResult").innerHTML = JSON.stringify(result, null, 4);
+  },
+
+  getReferrerDetails: async () => {
+    await HMSAds.disconnectFromReferrerClient();
+
+    const result = await HMSAds.getReferrerDetails(true);
+    getId("referrerDetailsResult").innerHTML = JSON.stringify(result, null, 4);
   },
 
   makeDialog: function () {

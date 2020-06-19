@@ -27,7 +27,7 @@
 //   console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
 //   // document.getElementById('deviceready').classList.add('ready');
 // }
-
+const getId = (id) => document.getElementById(id);
 var app = {
   initialized: false,
   hmsAvailable: false,
@@ -36,6 +36,12 @@ var app = {
   pushLog: "",
   accountlog: "",
   analyticslog: "",
+  sitelog: "",
+  // Initialize an ad object
+  ad: {
+    gender: 0,
+    nonPersonalizedAd: 0,
+  },
   // Application Constructor
   initialize: function () {
     if (this.initialized) return;
@@ -60,7 +66,7 @@ var app = {
 
     // Comming Soon
     document.getElementById("iapOpen").onclick = app.makeDialog;
-    document.getElementById("scanKitOpen").onclick = app.makeDialog;
+    // document.getElementById("scanKitOpen").onclick = app.makeDialog;
 
     // Map
     document.getElementById("openMapView").onclick = function () {
@@ -86,6 +92,8 @@ var app = {
     // app.LogEvent;
 
     // document.getElementById("enterPms").onclick = app.EnterPms;
+
+    // this.initSite();
   },
 
   // Update DOM on a Received Event
@@ -96,6 +104,183 @@ var app = {
     // listeningElement.setAttribute("style", "display:none;");
     // receivedElement.setAttribute("style", "display:block;");
     // console.log("Received Event: " + id);
+  },
+
+  initSite: function () {
+    //Initialize service
+    var config = {
+      apiKey:
+        "CV79g/usw+tvbIqzY5vC+/nCVNBwrTlUYWkOLj/90qZUtv2v6qjgBFkO+VrbpcAVCpTL/iH0qX5MXjnA6gDPLQRj090q",
+    };
+    app.sitelog = "";
+    document.getElementById("sitelog").innerHTML = app.sitelog;
+    HMSSite.initializeService(
+      config,
+      function () {
+        console.log("Service is initialized successfully");
+        app.sitelog =
+          app.sitelog +
+          app.appendP("Service is initialized successfully", "success");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      },
+      function (err) {
+        console.log("Error : " + err);
+        app.sitelog =
+          app.sitelog + app.appendP("Error : " + JSON.stringify(err), "error");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      }
+    );
+  },
+
+  onTextSearch: function () {
+    var siteText = document.getElementById("site_search").value;
+    // location: {
+    //   lat: 48.893478,
+    //   lng: 2.334595,
+    // },
+    var textSearchReq = {
+      query: JSON.stringify(siteText),
+      // location: {
+      //   lat: 48.893478,
+      //   lng: 2.334595,
+      // },
+      radius: 5000,
+      poiType: HMSSite.LocationType.ADDRESS,
+      countryCode: "SA",
+      language: "en",
+      pageIndex: 1,
+      pageSize: 5,
+    };
+    HMSSite.textSearch(
+      textSearchReq,
+      function (res) {
+        console.log(JSON.stringify(res));
+        app.sitelog = app.sitelog + app.appendP(JSON.stringify(res), "normal");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      },
+      function (err) {
+        console.error(JSON.stringify(err));
+        app.sitelog =
+          app.sitelog + app.appendP("Error : " + JSON.stringify(err), "error");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      }
+    );
+  },
+
+  onDetailSearch: function () {
+    var detailSearchReq = {
+      siteId: "16DA89C6962A36CB1752A343ED48B78A",
+      language: "fr",
+    };
+    HMSSite.detailSearch(
+      detailSearchReq,
+      function (res) {
+        console.log(JSON.stringify(res));
+        app.sitelog = app.sitelog + app.appendP(JSON.stringify(res), "normal");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      },
+      function (err) {
+        console.error(JSON.stringify(err));
+        app.sitelog =
+          app.sitelog + app.appendP("Error : " + JSON.stringify(err), "error");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      }
+    );
+  },
+
+  onQuerySuggestion: function () {
+    var siteText = document.getElementById("site_search").value;
+    var querySuggestionReq = {
+      query: JSON.stringify(siteText),
+      // location: {
+      //   lat: 48.893478,
+      //   lng: 2.334595,
+      // },
+      poiTypes: [HMSSite.LocationType.ADDRESS, HMSSite.LocationType.GEOCODE],
+      radius: 1000,
+      countryCode: "SA",
+      language: "en",
+    };
+    HMSSite.querySuggestion(
+      querySuggestionReq,
+      function (res) {
+        console.log(JSON.stringify(res));
+        app.sitelog = app.sitelog + app.appendP(JSON.stringify(res), "normal");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      },
+      function (err) {
+        console.error(JSON.stringify(err));
+        app.sitelog =
+          app.sitelog + app.appendP("Error : " + JSON.stringify(err), "error");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      }
+    );
+  },
+
+  onNearbySearch: function () {
+    var siteText = document.getElementById("site_search").value;
+    var nearbySearchReq = {
+      query: JSON.stringify(siteText),
+      location: {
+        lat: 24.613374,
+        lng: 46.728183,
+      },
+      radius: 5000,
+      poiType: HMSSite.LocationType.ADDRESS,
+      countryCode: "SA",
+      language: "en",
+      pageIndex: 1,
+      pageSize: 5,
+    };
+    HMSSite.nearbySearch(
+      nearbySearchReq,
+      function (res) {
+        console.log(JSON.stringify(res));
+        app.sitelog = app.sitelog + app.appendP(JSON.stringify(res), "normal");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      },
+      function (err) {
+        console.error(JSON.stringify(err));
+        app.sitelog =
+          app.sitelog + app.appendP("Error : " + JSON.stringify(err), "error");
+        document.getElementById("sitelog").innerHTML = app.sitelog;
+      }
+    );
+  },
+
+  initAds: async function () {
+    // Initialize cordova.plugins.HMSAds
+    await cordova.plugins.HMSAds.init({
+      bannerFloat: false,
+    });
+    app.loadOptions();
+  },
+
+  loadOptions: function () {
+    // Load colors
+    Object.keys(cordova.plugins.HMSAds.Colors).forEach((color) => {
+      const opt = document.createElement("option");
+      opt.value = cordova.plugins.HMSAds.Colors[color];
+      opt.innerHTML = color;
+      if (color === "TRANSPARENT") {
+        opt.selected = true;
+      }
+      getId("bannerAdBgColor").appendChild(opt);
+      getId("splashLogoColor").appendChild(opt.cloneNode(true));
+    });
+
+    // Load banner sizes
+    Object.getOwnPropertyNames(cordova.plugins.HMSAds).forEach((constant) => {
+      if (constant.startsWith("BANNER_SIZE")) {
+        const opt = document.createElement("option");
+        opt.value = cordova.plugins.HMSAds[constant];
+        opt.innerHTML = constant.replace("BANNER_SIZE_", "");
+        if (constant.endsWith("320_50")) {
+          opt.selected = true;
+        }
+        getId("bannerAdSize").appendChild(opt);
+      }
+    });
   },
 
   makeDialog: function () {

@@ -1,0 +1,47 @@
+{
+  "name": "cordova-plugin-hms-ads",
+  "version": "4.0.4",
+  "description": "cordova-plugin-hms-ads",
+  "cordova": {
+    "id": "cordova-plugin-hms-ads",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "scripts": {
+    "test": "npm run eslint",
+    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests"
+  },
+  "author": "Apache Software Foundation",
+  "license": "Apache-2.0",
+  "engines": [{
+    "name": "cordova",
+    "version": ">=3.0.0"
+  }],
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-semistandard": "^11.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "files": [
+    "hooks/**",
+    "resources/**",
+    "res/**",
+    "src/**",
+    "www/**",
+    "scripts/**",
+    "LICENCE",
+    "package.json",
+    "plugin.xml",
+    "README.md"
+  ]
+}

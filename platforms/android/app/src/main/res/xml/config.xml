@@ -26,6 +26,9 @@
     <feature name="cordova-plugin-hms-site">
         <param name="android-package" value="com.huawei.hms.cordova.site.HMSSitePlugin" />
     </feature>
+    <feature name="HMSAds">
+        <param name="android-package" value="com.huawei.hms.cordova.ads.HMSAds" />
+    </feature>
     <name>Cordova All HMS</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

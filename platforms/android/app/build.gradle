@@ -104,6 +104,7 @@ apply from: "../com.huawei.analyticsplugin/hms-build.gradle"
 apply from: "../com.huawei.cordovahmsgmscheckplugin/hms-build.gradle"
 apply from: "../com.huawei.cordovahmsaccountplugin/hms-build.gradle"
 apply from: "../cordova-plugin-hms-site/hms-plugin.gradle"
+apply from: "../cordova-plugin-hms-ads/hms-plugin.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -306,6 +307,10 @@ dependencies {
     implementation "com.google.android.gms:play-services-base:17.2.1"
     implementation "com.huawei.hms:hwid:4.0.0.300"
     implementation "com.huawei.hms:site:4.0.3.300"
+    implementation "com.huawei.hms:ads-lite:13.4.29.303"
+    implementation "com.huawei.hms:ads-identifier:3.4.29.301"
+    implementation "com.huawei.hms:ads-installreferrer:3.4.28.305"
+    implementation "com.huawei.hms:ads-consent:3.4.29.303"
     // SUB-PROJECT DEPENDENCIES END
 }
 

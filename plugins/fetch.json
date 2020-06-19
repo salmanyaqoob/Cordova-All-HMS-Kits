@@ -70,5 +70,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-hms-ads": {
+    "source": {
+      "type": "local",
+      "path": "D:\\workspace\\cordova\\allhms\\node_modules\\cordova-plugin-hms-ads"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "android": "cordova run android --debug -- --buildConfig=build.json",
-    "debug": "cordova build android --debug -- --buildConfig=build.json"
+    "debug": "cordova build android --debug -- --buildConfig=build.json",
+    "release": "cordova build android --release -- --buildConfig=build.json"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -27,7 +28,8 @@
       "com.huawei.analyticsplugin": {},
       "com.huawei.cordovahmsgmscheckplugin": {},
       "com.huawei.cordovahmsaccountplugin": {},
-      "cordova-plugin-hms-site": {}
+      "cordova-plugin-hms-site": {},
+      "cordova-plugin-hms-ads": {}
     },
     "platforms": [
       "android"
@@ -41,6 +43,7 @@
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-browsersync-gen2": "^1.1.7",
+    "cordova-plugin-hms-ads": "file:CordovaHMSPlugin/cordova-plugin-hms-ads",
     "cordova-plugin-hms-site": "file:CordovaHMSPlugin/cordova-plugin-hms-site",
     "cordova-plugin-x-toast": "^2.7.2",
     "cordovahmspushplugin": "file:CordovaHMSPlugin/CordovaHMSPushPlugin"

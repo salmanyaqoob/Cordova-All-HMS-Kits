@@ -30,6 +30,9 @@
     },
     "cordova-plugin-hms-site": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "cordova-plugin-hms-ads": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },
   "dependent_plugins": {},
@@ -89,6 +92,19 @@
       "clobbers": [
         "HMSSite"
       ]
+    },
+    {
+      "file": "plugins/cordova-plugin-hms-ads/www/utils.js",
+      "id": "cordova-plugin-hms-ads.utils",
+      "pluginId": "cordova-plugin-hms-ads"
+    },
+    {
+      "file": "plugins/cordova-plugin-hms-ads/www/HMSAds.js",
+      "id": "cordova-plugin-hms-ads.HMSAds",
+      "pluginId": "cordova-plugin-hms-ads",
+      "clobbers": [
+        "HMSAds"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -99,6 +115,7 @@
     "com.huawei.analyticsplugin": "1.0.0",
     "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
     "com.huawei.cordovahmsaccountplugin": "1.0.0",
-    "cordova-plugin-hms-site": "4.0.4"
+    "cordova-plugin-hms-site": "4.0.4",
+    "cordova-plugin-hms-ads": "4.0.4"
   }
 }

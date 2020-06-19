@@ -50,6 +50,26 @@
               "xml": "<service android:exported=\"false\" android:name=\"com.huawei.cordovahmspushplugin.MessageService\"><intent-filter><action android:name=\"com.huawei.push.action.MESSAGING_EVENT\" /></intent-filter></service>",
               "count": 1
             }
+          ],
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"HMSAds\"><param name=\"android-package\" value=\"com.huawei.hms.cordova.ads.HMSAds\" /></feature>",
+              "count": 1
+            }
           ]
         }
       }
@@ -81,6 +101,9 @@
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     },
     "cordova-plugin-hms-site": {
+      "PACKAGE_NAME": "com.salman.cordova.all.hms"
+    },
+    "cordova-plugin-hms-ads": {
       "PACKAGE_NAME": "com.salman.cordova.all.hms"
     }
   },
@@ -141,6 +164,19 @@
       "clobbers": [
         "HMSSite"
       ]
+    },
+    {
+      "id": "cordova-plugin-hms-ads.utils",
+      "file": "plugins/cordova-plugin-hms-ads/www/utils.js",
+      "pluginId": "cordova-plugin-hms-ads"
+    },
+    {
+      "id": "cordova-plugin-hms-ads.HMSAds",
+      "file": "plugins/cordova-plugin-hms-ads/www/HMSAds.js",
+      "pluginId": "cordova-plugin-hms-ads",
+      "clobbers": [
+        "HMSAds"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -152,6 +188,7 @@
     "com.huawei.analyticsplugin": "1.0.0",
     "com.huawei.cordovahmsgmscheckplugin": "1.0.0",
     "com.huawei.cordovahmsaccountplugin": "1.0.0",
-    "cordova-plugin-hms-site": "4.0.4"
+    "cordova-plugin-hms-site": "4.0.4",
+    "cordova-plugin-hms-ads": "4.0.4"
   }
 }

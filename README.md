@@ -38,7 +38,7 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
 
 <img src="./screenshots/4.jpg" width="250"> <img src="./screenshots/5.jpg" width="250"> <img src="./screenshots/6.jpg" width="250">
 
-<img src="./screenshots/7.jpg" width="250"> <img src="./screenshots/8.jpg" width="250">
+<img src="./screenshots/7.jpg" width="250"> <img src="./screenshots/8.jpg" width="250"> <img src="./screenshots/9.jpg" width="250">
 
 ## Project Guide
 
@@ -72,6 +72,7 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
     cordova plugin add .\CordovaHMSPlugin\CordovaHMSAccountPlugin
     cordova plugin add .\CordovaHMSPlugin\HMSAnalyticsPlugin
     cordova plugin add .\CordovaHMSPlugin\cordova-plugin-hms-site
+    cordova plugin add .\CordovaHMSPlugin\cordova-plugin-hms-ads
 
 ### Remove plugins from Project
 
@@ -81,6 +82,7 @@ For testing of Cordova project, please [download](https://github.com/salmanyaqoo
     cordova plugin remove com.huawei.cordovahmsaccountplugin
     cordova plugin remove com.huawei.cordovahmslocationplugin
     cordova plugin remove cordova-plugin-hms-site
+    cordova plugin remove cordova-plugin-hms-ads
 
 ### Run Application on HMS Device
 
