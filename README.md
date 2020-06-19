@@ -20,7 +20,9 @@ Cordova HMS packages integrated in this project :
 
 7.  **HMS Site Kit.**
 
-8.  **HMS In App Purchase Kit.** (Coming Soon)
+8.  **Huawei Ads Kit.**
+
+9.  **HMS In App Purchase Kit.** (Coming Soon)
 
 ## Download APK
 
