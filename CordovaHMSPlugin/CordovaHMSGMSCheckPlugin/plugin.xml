@@ -11,7 +11,7 @@
 
         <framework custom="true" src="src/android/build.gradle" type="gradleReference" />
         <!-- Account Kit dependency-->
-        <framework src="com.huawei.hms:hwid:4.0.0.300" />
+        <framework src="com.huawei.hms:base:5.0.4.301" />
         <framework src="com.google.android.gms:play-services-base:17.2.1" />
         
         <config-file parent="/*" target="res/xml/config.xml">
